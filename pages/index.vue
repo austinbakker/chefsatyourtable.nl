@@ -1,5 +1,7 @@
 <template>
- 
+  <div style="dipslay:grid;place-items:center;height:100vh;" >
+    Wesbite is momenteel in ontwikkeling
+  </div>
 </template>
 
 
@@ -19,7 +21,7 @@ export default defineComponent({
 
 
 <style lang='scss' >
- *, &::before, &::after{
+ *, *::before, *::after{
    box-sizing: border-box;
  }
  
