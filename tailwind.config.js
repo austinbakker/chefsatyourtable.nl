@@ -9,7 +9,12 @@
   ],
    darkMode: false, // or 'media' or 'class'
    theme: {
-     extend: {},
+     extend: {
+       colors:{
+          green: '#072422',
+          gold: '#CBC7B7'
+        }
+     },
    },
    variants: {
      extend: {},

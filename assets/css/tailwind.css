@@ -2,3 +2,49 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+
+@font-face {
+  font-family: GlacialIndifference;
+  src: url(GlacialIndifference-Regular.otf);
+}
+@font-face {
+  font-family: GlacialIndifferenceBold;
+  src: url(GlacialIndifference-Bold.otf);
+}
+
+@font-face {
+  font-family: CormorantGaramondLight;
+  src: url(font/CormorantGaramond-Light.ttf);
+}
+@font-face {
+  font-family: CormorantGaramondLightItalic;
+  src: url(font/CormorantGaramond-LightItalic.ttf);
+}
+*{
+  margin:0;padding:0;
+  font-family: GlacialIndifference;
+  color: #093B38;
+}
+h1,h2,h3,h4,h5,h6{
+  font-family: GlacialIndifferenceBold;
+}
+h2{
+  font-size: 70px;
+}
+h3{
+  font-size: 48px;
+}
+i{
+  font-family: CormorantGaramondLightItalic;
+  font-size: clamp(0.8rem, 1vw, 1.5rem);
+}
+p{
+  font-family: CormorantGaramondLight;
+  /* font-size: 28px; */
+  font-size: clamp(1rem, 1vw, 2rem);
+}
+*, *::before, *::after{
+  box-sizing: border-box;
+}
