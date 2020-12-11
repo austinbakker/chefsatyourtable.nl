@@ -13,9 +13,11 @@
   <!-- END OVER ONS -->
 
   <!-- MAX -->
+  <Person />
   <!-- END MAX -->
 
   <!-- PARTNERS -->
+  <Partners :partners='partners'/>
   <!-- END PARTNERS -->
 
   <!-- HOE WERKT HET -->
@@ -72,12 +74,22 @@ import { defineComponent } from "@nuxtjs/composition-api";
 import Navbar from "./../components/navbar.vue";
 import Hero from "./../components/hero.vue";
 import Overons from "./../components/overons.vue";
+import Person from "./../components/person.vue";
+import Partners from "./../components/partners.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons},
+ components: {Navbar, Hero, Overons, Person, Partners},
  setup() {
    
-   
+    const partners = [
+     {name: 'Visaandeschelde', img: require('~/assets/images/partners/1.png')},
+     {name: 'The Roast Room', img: require('~/assets/images/partners/2.png')},
+     {name: 'The Traveller', img: require('~/assets/images/partners/3.png')}
+   ]
+
+   return {
+     partners
+   }
  }
 })
 
