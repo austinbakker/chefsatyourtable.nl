@@ -4,7 +4,7 @@
     
     <div v-for="(item,index) in items" :key="index"
     v-show="selected==index"
-      class="grid gap-20 relative" style="grid-template-columns: 1fr 1fr">
+      class="grid gap-4 relative" style="grid-template-columns: 1fr 1fr">
         <!-- IMG -->
         <div class="absolute h-full w-64 " style="left:-15vw;" >
           <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
@@ -24,7 +24,11 @@
         </ul>
         <!-- CONTENT -->
         <div class="flex flex-col justify-center" >
-          <p v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}</p>
+          <p v-for="(content,indexContent) in item.content" :key="indexContent" >
+            {{content}}
+            <br>
+            <br>
+          </p>
         </div>
     </div>
   </div>

@@ -36,6 +36,9 @@ h2{
 h3{
   font-size: 48px;
 }
+h4{
+  font-size: 32px;
+}
 i{
   font-family: CormorantGaramondLightItalic;
   font-size: clamp(0.8rem, 1vw, 1.5rem);

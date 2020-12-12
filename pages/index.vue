@@ -30,6 +30,7 @@
   <!-- END HOE WERKT HET -->
 
   <!-- EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
+  <ExtraMogelijkhedenLocatie />
   <!-- END EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
 
   <!-- START - WAT ZIT ERBIJ INBEGREPEN  -->
@@ -85,9 +86,10 @@ import Overons from "./../components/overons.vue";
 import Person from "./../components/person.vue";
 import Partners from "./../components/partners.vue";
 import HoeWerktHet from "./../components/hoewerkthet.vue";
+import ExtraMogelijkhedenLocatie from "./../components/extramogelijkhedenlocatie.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet},
+ components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie},
  setup() {
    
     const partners = [
