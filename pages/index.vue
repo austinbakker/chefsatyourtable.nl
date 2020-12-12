@@ -20,9 +20,13 @@
 
   <!-- PARTNERS -->
     <Partners :partners='partners'/>
+    <div>
+      <img src="~/assets/images/food.png" alt="food">
+    </div>
   <!-- END PARTNERS -->
 
   <!-- HOE WERKT HET -->
+    <HoeWerktHet />
   <!-- END HOE WERKT HET -->
 
   <!-- EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
@@ -80,9 +84,10 @@ import Hero from "./../components/hero.vue";
 import Overons from "./../components/overons.vue";
 import Person from "./../components/person.vue";
 import Partners from "./../components/partners.vue";
+import HoeWerktHet from "./../components/hoewerkthet.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners},
+ components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet},
  setup() {
    
     const partners = [
