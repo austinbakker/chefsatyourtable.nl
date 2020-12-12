@@ -1,10 +1,10 @@
 <template>
   <div class="h-screen relative" >
     <!-- START - IMAGES  -->
-    <div ref='images' class="" >
+    <div ref='images' class="h-full overflow-hidden" >
       <transition name="slide-fade" v-for="(image,index) in images" :key="index">
         <img 
-          class="absolute top-0 left-0"
+          class="absolute top-0 left-0 object-cover h-full overflow-hidden"
           v-show="selected==index"
           :src="image" alt="hero image 1">
       </transition>
@@ -16,7 +16,7 @@
       <ul class=" bg-green inline-flex mx-auto rounded-full justify-center place-items-center gap-10 py-2 px-6" >
         <li
           v-for="(image,index) in images.length" :key="index"
-          :class="[selected==index ? 'opacity-25' : 'opacity-100', 'w-24 h-2 bg-gold rounded-full hover:opacity-100']"
+          :class="[selected==index ? 'opacity-100' : 'opacity-25', 'transition-all w-24 h-2 bg-gold rounded-full ']"
           @click="selected=index" ></li>
       </ul>
     </div>

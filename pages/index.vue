@@ -5,11 +5,11 @@
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
-  <!-- <Hero /> -->
+    <Hero />
   <!-- END HERO -->
 
   <!-- OVER ONS -->
-  <Overons />
+    <!-- <Overons /> -->
   <!-- END OVER ONS -->
 
   <!-- MAX -->
