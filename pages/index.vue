@@ -1,11 +1,11 @@
 <template>
 <div>
   <!-- START - NAVBAR  -->
-  <!-- <Navbar /> -->
+    <Navbar />
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
-    <Hero />
+    <!-- <Hero /> -->
   <!-- END HERO -->
 
   <!-- OVER ONS -->
