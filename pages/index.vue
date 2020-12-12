@@ -1,11 +1,11 @@
 <template>
 <div>
   <!-- START - NAVBAR  -->
-  <Navbar />
+  <!-- <Navbar /> -->
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
-  <Hero />
+  <!-- <Hero /> -->
   <!-- END HERO -->
 
   <!-- OVER ONS -->
@@ -13,11 +13,11 @@
   <!-- END OVER ONS -->
 
   <!-- MAX -->
-  <Person />
+  <!-- <Person /> -->
   <!-- END MAX -->
 
   <!-- PARTNERS -->
-  <Partners :partners='partners'/>
+  <!-- <Partners :partners='partners'/> -->
   <!-- END PARTNERS -->
 
   <!-- HOE WERKT HET -->

@@ -1,12 +1,13 @@
 <template>
   <div>
     <h2 class="my-24 text-center" >OVER ONS</h2>
+    <div class="" style="min-height:70vh;">
 
-    <div class=" bg-gold relative" >
-      <div class="grid grid-cols-2 py-12 my-24 container">
+    <div class="relative bg-gold"  >
+      <div class="container grid grid-cols-1 gap-20 lg:grid-cols-2 py-12">
 
       <!-- START - CONTENT  -->
-      <div>
+      <div class="flex justify-center flex-col z-10 " >
         <h3>Over Chefs At Your Table</h3>
         <p>Welkom bij Chefs At Your Table. Het enige cateringbedrijf dat een volledig(e) lunch, borrel of diner van één van uw favoriete restaurants bij u thuis kan verzorgen. Van het peper-en-zout stelletje tot aan een grand dessert en de mooiste bijpassende wijnen.
           <br>
@@ -17,18 +18,18 @@
       <!-- END -  CONTENT -->
       
       <!-- START - IMAGES  -->
-      <div class="grid grid-cols-2" >
-        <div class="relative" >
-          <img class="absolute w-full -top-2/4" src="~/assets/images/overons/1.png" alt="image 1">
+      <div class="grid gap-10 grid-cols-2 mt-20 lg:mt-0" >
+        <div class="relative lg:h-full h-64" >
+          <img class="md:absolute w-full md:top-0 md:h-5/6 object-cover" style="height:125%" src="~/assets/images/overons/1.png" alt="image 1">
         </div>
 
-        <div class="relative" >
-          <img class="absolute left-0 -bottom-2/4" src="~/assets/images/overons/2.png" alt="image 1">
+        <div class="relative lg:h-full h-64" >
+          <img class="md:absolute w-full md:bottom-0 md:h-5/6 object-cover" style="height:125%" src="~/assets/images/overons/2.png" alt="image 1">
         </div>
       </div>
       <!-- END -  IMAGES -->
-      
       </div>
+    </div>
     </div>
 
   </div>
