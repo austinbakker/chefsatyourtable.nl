@@ -1,19 +1,21 @@
 <template>
 <div>
   <!-- START - NAVBAR  -->
+  <div class="absolute top-0 w-screen" >
     <Navbar />
+  </div>
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
-    <!-- <Hero /> -->
+    <Hero />
   <!-- END HERO -->
 
   <!-- OVER ONS -->
-    <!-- <Overons /> -->
+    <Overons />
   <!-- END OVER ONS -->
 
   <!-- MAX -->
-  <!-- <Person /> -->
+    <Person />
   <!-- END MAX -->
 
   <!-- PARTNERS -->

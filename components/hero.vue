@@ -1,10 +1,10 @@
 <template>
   <div class="h-screen relative" >
     <!-- START - IMAGES  -->
-    <div ref='images' class="h-full overflow-hidden" >
+    <div ref='images' class="h-full w-screen overflow-hidden" >
       <transition name="slide-fade" v-for="(image,index) in images" :key="index">
         <img 
-          class="absolute top-0 left-0 object-cover h-full overflow-hidden"
+          class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden"
           v-show="selected==index"
           :src="image" alt="hero image 1">
       </transition>

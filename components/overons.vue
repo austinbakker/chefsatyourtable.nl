@@ -4,7 +4,7 @@
     <div class="" style="min-height:70vh;">
 
     <div class="relative bg-gold"  >
-      <div class="container grid grid-cols-1 gap-20 lg:grid-cols-2 py-12">
+      <div class="container grid grid-cols-1 gap-20 lg:grid-cols-2 py-14">
 
       <!-- START - CONTENT  -->
       <div class="flex justify-center flex-col z-10 " >

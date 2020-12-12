@@ -1,5 +1,5 @@
 <template>
-<div>
+<div class="z-20 relative" >
 
   <nav class="hidden md:flex h-32 bg-green items-center px-12" >
     <!-- START - LOGO  -->
@@ -20,7 +20,7 @@
         <a class="transition-all transform scale-100 hover:scale-125" href="">CONTACT</a>
         <a class="transition-all transform scale-100 hover:scale-125" href="">IMPRESSIES</a>
         <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
-        <a href=""><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
+        <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
         <a href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a>
       </div>
     <!-- END -  Items -->
@@ -46,7 +46,7 @@
           <a class="transition-all transform scale-100 hover:scale-125" href="">IMPRESSIES</a>
           <div class="flex justify-evenly" >
             <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
-            <a href=""><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
+            <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
             <a href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a>
           </div>
         </div>
