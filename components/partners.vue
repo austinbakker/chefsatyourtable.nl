@@ -1,9 +1,10 @@
 <template>
-<div>
-  <h2>PARTNERS</h2>
-  <ul class="flex relative items-center container justify-center gap-28 h-12" >
-    <a class="h-full" v-for="(partner, index) in partners" :key="index">
-      <img style="height:100%;" class="object-contain" :src="partner.img" :alt="partner.name">
+<div class="container" >
+  <h2 class="text-center" >PARTNERS</h2>
+  <ul class="flex flex-col md:flex-row relative items-center justify-center gap-x-32 " >
+    <a  v-for="(partner, index) in partners" :key="index"
+      :href="`#${partner.name}`" class="block transition-all transform hover:scale-125">
+      <img class="object-contain h-64 w-64" :src="partner.img" :alt="partner.name">
     </a> 
   </ul>
 </div>

@@ -19,7 +19,7 @@
   <!-- END MAX -->
 
   <!-- PARTNERS -->
-  <!-- <Partners :partners='partners'/> -->
+    <Partners :partners='partners'/>
   <!-- END PARTNERS -->
 
   <!-- HOE WERKT HET -->
@@ -65,7 +65,9 @@
   <!-- START - FOOTER  -->
   
   <!-- END -  FOOTER -->
-  
+  <div class="h-screen">
+    testing this item
+  </div>
   
 </div>
 </template>
@@ -85,8 +87,8 @@ export default defineComponent({
    
     const partners = [
      {name: 'Visaandeschelde', img: require('~/assets/images/partners/1.png')},
-     {name: 'The Roast Room', img: require('~/assets/images/partners/2.png')},
-     {name: 'The Traveller', img: require('~/assets/images/partners/3.png')}
+     {name: 'The Traveller', img: require('~/assets/images/partners/3.png')},
+     {name: 'The Roast Room', img: require('~/assets/images/partners/2.png')}
    ]
 
    return {
