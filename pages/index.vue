@@ -2,7 +2,7 @@
 <div>
   <!-- START - NAVBAR  -->
   <div class="absolute top-0 w-screen" >
-    <Navbar />
+    <Navbar :socials='socials' />
   </div>
   <!-- END -  NAVBAR -->
   
@@ -51,7 +51,7 @@
   <!-- END -  IMPRESSIES -->
   
   <!-- START - FOOTER  -->
-  
+    <Footer :socials='socials' />
   <!-- END -  FOOTER -->
   <div class="h-screen" style="background:red;">
     full screen item
@@ -74,9 +74,10 @@ import Benefits from "./../components/benefits.vue";
 import Menus from "./../components/menus.vue";
 import Contact from "./../components/contact.vue";
 import Impressies from "./../components/impressies.vue";
+import Footer from "./../components/footer.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
+ components: {Footer,Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
    
     const partners = [
@@ -85,8 +86,27 @@ export default defineComponent({
      {name: 'The Roast Room', img: require('~/assets/images/partners/2.png')}
    ]
 
+   const socials = [
+     {
+       name: 'Instagram',
+       image: require('~/assets/images/socials/instagram.svg'),
+       url: 'https://www.instagram.com/chefsatyourtable/'
+     },
+     {
+       name: 'Facebook',
+       image: require('~/assets/images/socials/facebook.svg'),
+       url: 'https://www.facebook.com/ChefsatyourTable'
+     },
+     {
+       name: 'Linkedin',
+       image: require('~/assets/images/socials/linkedin.svg'),
+       url: 'https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl'
+     },
+   ]
+
    return {
-     partners
+     partners,
+     socials
    }
  }
 })

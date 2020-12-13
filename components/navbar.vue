@@ -19,9 +19,12 @@
         <a class="transition-all transform scale-100 hover:scale-125" href="">MENU</a>
         <a class="transition-all transform scale-100 hover:scale-125" href="">CONTACT</a>
         <a class="transition-all transform scale-100 hover:scale-125" href="">IMPRESSIES</a>
-        <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
-        <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
-        <a href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a>
+        <a v-for="(social,index) in socials" :key='index' :href="social.url">
+          <img :src="social.image" :alt="social.name" class="h-4 w-4 transition-all transform scale-100 hover:scale-125">
+        </a>
+        <!-- <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a> -->
+        <!-- <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a> -->
+        <!-- <a href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a> -->
       </div>
     <!-- END -  Items -->
 
@@ -62,7 +65,7 @@
 <script lang='ts' >
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 export default defineComponent({
- props: [],
+ props: ['socials'],
  components: {},
  setup() {
 
