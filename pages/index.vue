@@ -41,26 +41,9 @@
     <Menus />
   <!-- END -  MENU SELECTOR -->
   
-  <!-- START - MENU'S  -->
-
-    <!-- START - visaandaschelde  -->
-    
-    <!-- END -  visaandaschelde -->
-
-
-    <!-- START - THE ROAST ROOM  -->
-    
-    <!-- END -  THE ROAST ROOM -->
-    
-
-    <!-- START - THE TRAVELLER  -->
-    
-    <!-- END -  THE TRAVELLER -->
-    
-  <!-- END -  MENU'S -->
 
   <!-- START - CONTACT  -->
-  
+    <Contact />
   <!-- END -  CONTACT -->
   
   <!-- START - IMPRESSIES  -->
@@ -89,9 +72,10 @@ import HoeWerktHet from "./../components/hoewerkthet.vue";
 import ExtraMogelijkhedenLocatie from "./../components/extramogelijkhedenlocatie.vue";
 import Benefits from "./../components/benefits.vue";
 import Menus from "./../components/menus.vue";
+import Contact from "./../components/contact.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus},
+ components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact},
  setup() {
    
     const partners = [

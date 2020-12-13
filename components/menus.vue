@@ -2,22 +2,28 @@
 <div>
 <!-- MENU SELECTOR -->
 <ul>
-  <li v-for="(resturant,index) in resturants" :key="index" >
+  <li class="flex flex-col gap-24" v-for="(resturant,index) in resturants" :key="index" >
     <!-- LOGO -->
     <div><img class="mx-auto w-96 h-96 object-contain" :src="resturant.image" :alt="resturant.name"></div>
     <!-- MENU -->
-    <div class="shadow-2xl w-4/6 mx-auto p-10 rounded-sm" >
+    <div class="flex flex-col gap-10 shadow-2xl w-4/6 mx-auto py-10 px-24 rounded-lg" >
       <h4 class="text-center" >{{resturant.menu.name}}</h4>
       <ul class="flex flex-col gap-2"  >
         <li :style="{color: resturant.menu.color}" v-for="(item, indexItem) in resturant.menu.items" :key="indexItem" >{{item}}</li>
-        <p :style="{color: resturant.menu.color}" >{{resturant.menu.context}}</p>
       </ul>
+        <p :style="{color: resturant.menu.color}" >{{resturant.menu.context}}</p>
     </div>
 
-    <div>
-      <div>MENU</div>
-      <p>Wilt u het menu liever zelf samenstellen, bekijk dan de mogelijkheden op de A la Carte kaart. U kunt het menu aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van {{resturant.name}}</p>
+    <!-- SECOND MENU -->
+    <div class="flex flex-col gap-24 mx-auto w-3/6 shadow-lg rounded-lg py-12 px-28" >
+      <h4 class="text-center" >MENU</h4>
+      <p class="text-center" >Wilt u het menu liever zelf samenstellen, bekijk dan de mogelijkheden op de A la Carte kaart. U kunt het menu aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van {{resturant.name}}</p>
       <div><img :src="resturant.menu2.image" :alt="resturant.name"></div>
+      <div class="text-center" >
+        <a :href="`/${resturant.pdf}`" target="_blank">
+          <button class="mx-auto shadow-md rounded-md py-2 px-4 font-bold transform hover:scale-110 transition-all hover:bg-green hover:text-white" >A la Carte + Wijnkaart</button>
+        </a>
+      </div>
     </div>
   </li>
 </ul>
@@ -35,6 +41,7 @@ export default {
      {
        name: 'Visaandeschelde',
        image: require('~/assets/images/partners/1.png'),
+       pdf: 'visaandeschelde.pdf',
        menu: {
          name: 'Culi-VIS Menu',
          color: '#004371',
@@ -56,12 +63,12 @@ export default {
        menu2: {
           name: "menu",
           image: require('~/assets/images/menu/1.png'),
-          pdf: '~/assets/images/menu/1.pdf'
       },
      },
      {
        name: 'The Roast Room',
        image: require('~/assets/images/partners/2.png'),
+       pdf: 'theroastroom.pdf',
        menu: {
          name: 'CULI-ROAST MENU',
          color: '#000000',
@@ -83,12 +90,12 @@ export default {
        menu2: {
           name: "menu",
           image: require('~/assets/images/menu/2.png'),
-          pdf: '~/assets/images/menu/2.pdf'
       },
      },
      {
        name: 'The Traveller',
        image: require('~/assets/images/partners/3.png'),
+       pdf: 'thetraveller.pdf',
        menu: {
          name: 'The Traveller Menu',
          color: '#000000',
@@ -110,7 +117,6 @@ export default {
        menu2: {
           name: "menu",
           image: require('~/assets/images/menu/3.png'),
-          pdf: '~/assets/images/menu/3.pdf'
       },
      },
    ]
