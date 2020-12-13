@@ -34,7 +34,7 @@
   <!-- END EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
 
   <!-- START - WAT ZIT ERBIJ INBEGREPEN  -->
-  
+    <Benefits />
   <!-- END -  WAT ZIT ERBIJ INBEGREPEN -->
 
   <!-- START - MENU SELECTOR  -->
@@ -87,9 +87,10 @@ import Person from "./../components/person.vue";
 import Partners from "./../components/partners.vue";
 import HoeWerktHet from "./../components/hoewerkthet.vue";
 import ExtraMogelijkhedenLocatie from "./../components/extramogelijkhedenlocatie.vue";
+import Benefits from "./../components/benefits.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie},
+ components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits},
  setup() {
    
     const partners = [
