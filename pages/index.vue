@@ -47,14 +47,14 @@
   <!-- END -  CONTACT -->
   
   <!-- START - IMPRESSIES  -->
-  
+    <Impressies />
   <!-- END -  IMPRESSIES -->
   
   <!-- START - FOOTER  -->
   
   <!-- END -  FOOTER -->
-  <div class="h-screen">
-    testing this item
+  <div class="h-screen" style="background:red;">
+    full screen item
   </div>
   
 </div>
@@ -73,9 +73,10 @@ import ExtraMogelijkhedenLocatie from "./../components/extramogelijkhedenlocatie
 import Benefits from "./../components/benefits.vue";
 import Menus from "./../components/menus.vue";
 import Contact from "./../components/contact.vue";
+import Impressies from "./../components/impressies.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact},
+ components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
    
     const partners = [
