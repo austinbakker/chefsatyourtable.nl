@@ -38,7 +38,7 @@
   <!-- END -  WAT ZIT ERBIJ INBEGREPEN -->
 
   <!-- START - MENU SELECTOR  -->
-  
+    <Menus />
   <!-- END -  MENU SELECTOR -->
   
   <!-- START - MENU'S  -->
@@ -88,9 +88,10 @@ import Partners from "./../components/partners.vue";
 import HoeWerktHet from "./../components/hoewerkthet.vue";
 import ExtraMogelijkhedenLocatie from "./../components/extramogelijkhedenlocatie.vue";
 import Benefits from "./../components/benefits.vue";
+import Menus from "./../components/menus.vue";
 export default defineComponent({
  props: [],
- components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits},
+ components: {Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus},
  setup() {
    
     const partners = [
