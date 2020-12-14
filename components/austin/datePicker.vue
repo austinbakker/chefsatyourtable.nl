@@ -1,0 +1,155 @@
+<template>
+ <div>
+   {{selectedDate}}
+ <div class="flex w-full justify-evenly mx-auto" >
+
+   <!-- START DAY -->
+   <div class="relative transition-all duration-300 hover:shadow-0" >
+     <!-- viewer -->
+     <h6 class="text-center" >DAG</h6>
+     <div @click="open.day=!open.day" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
+       {{ selectedDate.get('day') }}
+     </div>
+     <!-- list -->
+     <div v-show="open.day" class="shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+       <div @click="setDate(day)" class="hover:bg-gray"  v-for="(day,index) in days" :key="index" v-show="day.get('day')!=selectedDate.get('day')" >{{ selectedDate.get('day') }}</div>
+     </div>
+   </div>
+  <!-- END DAY -->
+
+
+   <!-- START MONTHS -->
+   <div class="relative transition-all duration-300 hover:shadow-0" >
+     <!-- viewer -->
+     <h6 class="text-center" >MAAND</h6>
+     <div @click="open.month=!open.month" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
+       {{ new Date(selectedDate).toLocaleString([], {month: 'long'}) }}
+     </div>
+     <!-- list -->
+     <div v-show="open.month" class="shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+       <div @click="setDate(month)" class="hover:bg-gray"  v-for="(month,index) in months" :key="index" v-show="new Date(month).toLocaleString([],{ month: 'numeric' })!=new Date(selectedDate).toLocaleString([],{ month: 'numeric' })" >{{ new Date(month).toLocaleString([], {month: 'long'}) }}</div>
+     </div>
+   </div>
+  <!-- END MONTHS -->
+
+
+
+
+   <!-- START YEARS -->
+   <div class="relative transition-all duration-300 hover:shadow-0" >
+     <h6 class="text-center" >JAAR</h6>
+     <!-- viewer -->
+     <div @click="open.year=!open.year" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
+       {{new Date(selectedDate).toLocaleString([],{ year: 'numeric' })}}
+     </div>
+     <!-- list -->
+     <div v-show="open.year" class="shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+       <div @click="setYear(year)" class="hover:bg-gray"  v-for="(year,index) in years" :key="index" v-show="new Date(year).toLocaleString([],{ year: 'numeric' })!=new Date(selectedDate).toLocaleString([],{ year: 'numeric' })" >{{new Date(year).toLocaleString([],{ year: 'numeric' })}}</div>
+     </div>
+   </div>
+  <!-- END YEARS -->
+
+ </div>
+</div>
+</template>
+
+
+<script lang='ts' >
+import { defineComponent, PropType, reactive, computed, ref, onMounted, watchEffect, watch } from "@nuxtjs/composition-api";
+const { DateTime } = require("luxon");
+export default defineComponent({
+ props: {
+   color: String
+ },
+ components: {},
+ setup() {
+   const open = reactive({
+     day: false,
+     month: false,
+     year: false
+   })
+
+    const years = computed(() => {
+      const today = DateTime.local()
+      const howManyYears = 3
+      const years = []
+      for (let index = 0; index < howManyYears; index++) {
+        years.push(today.plus({years:index}))
+      }
+      return years
+    })
+
+
+
+    // onMounted(() => {selectedDate.value=DateTime.local();console.log('dt', DateTime.local())})
+    const selectedDate = ref(DateTime.local())
+    const setDate = (inputDate) => {
+      selectedDate.value=inputDate;
+      open.day=false;open.month=false;open.year=false;
+    }
+    const setYear = (year) => {
+      console.log('yyyy',  )
+      selectedDate.value=selectedDate.value.set({year: new Date(year).getFullYear()})
+    }
+    const months = ref([])
+    watch(selectedDate, () => {
+      const end = selectedDate.value.endOf('year')
+      const now = DateTime.local().ts
+      const start = (selectedDate.value.startOf('year').ts>now) ?  selectedDate.value.startOf('year') : DateTime.local() 
+      const Nmonths = Math.round(end.diff(start, ['months']).toObject().months)
+      const monthsList = []
+      for (let index = 0; index < Nmonths; index++) {
+        const x = (selectedDate.value).startOf('year')
+        monthsList.push(start.plus({months:index}))
+      }
+      months.value=monthsList
+    },{immediate: true})
+    const days = ref([])
+    watch(
+      selectedDate,
+      () => {
+        days.value = [DateTime.local() ,DateTime.local() ,DateTime.local() ]
+      },
+      {immediate: true}
+    
+    )
+
+   return {
+     open,
+     days,
+     years,
+     months,
+     selectedDate,
+     setDate,
+     setYear
+   }
+   
+ }
+})
+
+
+</script>
+
+
+<style lang='scss' >
+ .overflowRestyling{
+   &::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+    background-color: #737272;
+    border: 1px solid #000;
+  }
+  &::-webkit-scrollbar-thumb {
+    width: 10px;
+  }
+  &::-webkit-scrollbar-track {
+  border: 1px solid #000;
+  padding: 2px 0;
+  background-color: #404040;
+}
+}
+ 
+//POWERED BY AUSTIN
+</style>
+ 
+ 

@@ -45,23 +45,9 @@
 <!-- END -  stage 2 -->
 
 <!-- START - stage 3  -->
-<div v-show="stage==2" >
-  <h4>Selecteer een datum en tijdstip</h4>
-  <div>
-
-    <select name="day" class="border-2 border-green rounded-md px-8 py-2 font-bold styled-select">
-      <option v-for="(day,index) in ['01','02','03','04']" :key="index" :value="num">{{day}}</option>
-    </select> 
-
-
-    <select name="month" class="border-2 border-green rounded-md px-8 py-2 font-bold styled-select">
-      <option v-for="(day,index) in ['01','02','03','04']" :key="index" :value="num">{{day}}</option>
-    </select> 
-
-    <select name="year" class="border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
-      <option v-for="(day,index) in ['2020','2021','2022']" :key="index" :value="day">{{day}}</option>
-    </select>
-  </div>
+<div v-show="stage==2" class="max-w-5xl mx-auto w-full flex flex-col gap-20" >
+  <h4 class="text-center" >Selecteer een datum en tijdstip</h4>
+  <DatePicker />
 </div>
 <!-- END -  stage 3 -->
 
@@ -117,10 +103,11 @@
 <script lang='ts' >
 import { defineComponent, ref, reactive, watchEffect } from "@nuxtjs/composition-api";
 import moment from 'moment'
+import DatePicker from "./austin/datePicker.vue";
 const { DateTime } = require("luxon");
 export default defineComponent({
  props: ['partners'],
- components: {},
+ components: {DatePicker},
  setup() {
    const stage = ref(0)
    const resturant = ref(null)
