@@ -12,7 +12,11 @@
      extend: {
        colors:{
           green: '#072422',
-          gold: '#CBC7B7'
+          gold: '#CBC7B7',
+          gray: '#F0F0F0'
+        },
+        boxShadow:{
+          '0': '0 0 0 0 rgba(0, 0, 0, 0.25)',
         }
      },
    },

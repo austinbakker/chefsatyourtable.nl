@@ -1,9 +1,10 @@
 <template>
 <div>
+  <ContactForm :partners='partners' />
   <!-- START - NAVBAR  -->
-  <div class="absolute top-0 w-screen" >
+  <!-- <div class="absolute top-0 w-screen" >
     <Navbar :socials='socials' />
-  </div>
+  </div> -->
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
@@ -75,9 +76,10 @@ import Menus from "./../components/menus.vue";
 import Contact from "./../components/contact.vue";
 import Impressies from "./../components/impressies.vue";
 import Footer from "./../components/footer.vue";
+import ContactForm from "./../components/contactform.vue";
 export default defineComponent({
  props: [],
- components: {Footer,Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
+ components: {ContactForm, Footer,Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
    
     const partners = [

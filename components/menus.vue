@@ -18,7 +18,7 @@
     <div class="flex flex-col gap-24 mx-auto w-3/6 shadow-lg rounded-lg py-12 px-28" >
       <h4 class="text-center" >MENU</h4>
       <p class="text-center" >Wilt u het menu liever zelf samenstellen, bekijk dan de mogelijkheden op de A la Carte kaart. U kunt het menu aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van {{resturant.name}}</p>
-      <div><img :src="resturant.menu2.image" :alt="resturant.name"></div>
+      <div><img class="mx-auto" :src="resturant.menu2.image" :alt="resturant.name"></div>
       <div class="text-center" >
         <a :href="`/${resturant.pdf}`" target="_blank">
           <button class="mx-auto shadow-md rounded-md py-2 px-4 font-bold transform hover:scale-110 transition-all hover:bg-green hover:text-white" >A la Carte + Wijnkaart</button>
