@@ -45,7 +45,7 @@
     <h4 class="text-center" >Aantal Personen?</h4>
     <div class="max-w-5xl mx-auto w-full" >
       <h2 class="text-center" >{{personen}}</h2>
-      <input type="range" min="2" max="50" v-model='personen' class="slider" id="myRange">
+      <input name="personen" type="range" min="2" max="50" v-model='personen' class="slider" id="myRange">
     </div>
   </div>
   <div @click="stage++" class="shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300 flex place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
