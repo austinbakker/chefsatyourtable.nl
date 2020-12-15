@@ -4,6 +4,7 @@
   "description": "",
   "scripts": {
     "dev": "nuxt",
+    "deploy": "nuxt generate && netlify deploy",
     "build": "nuxt generate",
     "start": "nuxt start"
   },
