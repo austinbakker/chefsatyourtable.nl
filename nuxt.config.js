@@ -1,6 +1,11 @@
 export default {
-  ssr: true,
   target: 'static',
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: false
+    }
+  },
   htmlAttrs: {
     lang: 'nl'
   },
