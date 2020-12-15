@@ -7,14 +7,13 @@
 <div class="grid  gap-4 relative container custom-grid " style=""  > 
 
   <!-- IMAGES -->
-  <div>
+  <div class="w-8 h-8" >
+    testing
     <transition name="fade" mode="out-in" >
       <template v-for="(item,index) in items"  >
-        <!-- <div v-if="progress < (index+1)*34 && progress >index*34" :key="index" class="md:hidden flex relative md:absolute h-48 w-48 mx-auto text-center " >
-          <img class="relative md:absolute md:-left-1/4 md:h-64 object-cover" :src="item.image" alt="image of food">
-        </div> -->
+
         <!-- desktop version -->
-        <div v-if="progress < (index+1)*34 && progress >index*34" :key="index" class="hidden md:block absolute h-full w-64 " style="left:-15vw;" >
+        <div v-if="progress < (index+1)*34 && progress >index*34" :key="index" class="relative md:absolute h-full w-64 " style="left:-15vw;" >
           <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
         </div>
       </template>
