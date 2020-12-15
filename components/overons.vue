@@ -20,11 +20,11 @@
       <!-- START - IMAGES  -->
       <div class="grid gap-10 grid-cols-2 mt-20 lg:mt-0" >
         <div class="relative lg:h-full h-64" >
-          <img class="md:absolute w-full md:top-0 md:h-5/6 object-cover" style="height:125%" src="~/assets/images/overons/1.png" alt="image 1">
+          <nuxt-image class="md:absolute w-full md:top-0 md:h-5/6 object-cover" style="height:125%" src="images/overons/1.png" alt="image 1" />
         </div>
 
         <div class="relative lg:h-full h-64" >
-          <img class="md:absolute w-full md:bottom-0 md:h-5/6 object-cover" style="height:125%" src="~/assets/images/overons/2.png" alt="image 1">
+          <nuxt-image class="md:absolute w-full md:bottom-0 md:h-5/6 object-cover" style="height:125%" src="images/overons/2.png" alt="image 1" />
         </div>
       </div>
       <!-- END -  IMAGES -->

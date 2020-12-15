@@ -3,11 +3,12 @@
     <!-- START - IMAGES  -->
     <div ref='images' class="h-full w-screen overflow-hidden" >
       <transition name="slide-fade" v-for="(image,index) in images" :key="index">
-        <nuxt-image class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden" sizes="300,300:600,600:900" v-show="selected==index" :src="image" alt="hero image 1" />
-        <!-- <img 
+        <!-- <nuxt-image class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden" sizes="300,300:600,600:900" v-show="selected==index" :src="image" alt="hero image 1" /> -->
+        <nuxt-image 
+          :placeholder="true"
           class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden"
           v-show="selected==index"
-          :src="image" alt="hero image 1"> -->
+          :src="image" alt="hero image 1" />
       </transition>
     </div>
     <!-- END -  IMAGES -->
@@ -34,10 +35,16 @@ export default defineComponent({
  components: {},
  setup() {
    const selected = ref(0)
+    // const images = [
+    //   require('~/static/images/hero/1.jpg'),
+    //   require('~/static/images/hero/2.jpg'),
+    //   require('~/static/images/hero/3.jpg'),
+    // ]
+
     const images = [
-      require('~/assets/images/hero/1.jpg'),
-      require('~/assets/images/hero/2.jpg'),
-      require('~/assets/images/hero/3.jpg'),
+      'images/hero/1.jpg',
+      'images/hero/2.jpg',
+      'images/hero/3.jpg'
     ]
 
 

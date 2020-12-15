@@ -4,7 +4,7 @@
 <ul>
   <li class="flex flex-col gap-24" v-for="(resturant,index) in resturants" :key="index" >
     <!-- LOGO -->
-    <div><img class="mx-auto w-48 h-48 md:w-96 md:h-96 object-contain" :src="resturant.image" :alt="resturant.name"></div>
+    <div><nuxt-image class="mx-auto w-48 h-48 md:w-96 md:h-96 object-contain" width='500' height='200' :src="resturant.image" :alt="resturant.name" /></div>
 
     <!-- MENU -->
     <div class="flex flex-col gap-10 shadow-2xl w-5/6 md:w-4/6 mx-auto py-10 px-4 md:px-24 rounded-lg" >
@@ -19,7 +19,7 @@
     <div class="flex flex-col gap-24 mx-auto w-5/6 md:w-3/6 shadow-lg rounded-lg py-12 px-4 md:px-28" >
       <h3 class="text-center" >MENU</h3>
       <p class="text-center" >Wilt u het menu liever zelf samenstellen, bekijk dan de mogelijkheden op de A la Carte kaart. U kunt het menu aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van {{resturant.name}}</p>
-      <div><img class="mx-auto" :src="resturant.menu2.image" :alt="resturant.name"></div>
+      <div><nuxt-image class="mx-auto" :src="resturant.menu2.image" :alt="resturant.name" /></div>
       <div class="text-center" >
         <a :href="`/${resturant.pdf}`" target="_blank">
           <button class="mx-auto shadow-md rounded-md py-2 px-4 font-bold transform hover:scale-110 transition-all hover:bg-green hover:text-white" >A la Carte + Wijnkaart</button>
@@ -41,7 +41,7 @@ export default {
    const resturants = [
      {
        name: 'Visaandeschelde',
-       image: require('~/assets/images/partners/1.png'),
+       image: 'images/partners/1.png',
        pdf: 'visaandeschelde.pdf',
        menu: {
          name: 'Culi-VIS Menu',
@@ -63,12 +63,12 @@ export default {
        },
        menu2: {
           name: "menu",
-          image: require('~/assets/images/menu/1.png'),
+          image: 'images/menu/1.png'
       },
      },
      {
        name: 'The Roast Room',
-       image: require('~/assets/images/partners/2.png'),
+       image: 'images/partners/2.png',
        pdf: 'theroastroom.pdf',
        menu: {
          name: 'CULI-ROAST MENU',
@@ -90,12 +90,12 @@ export default {
        },
        menu2: {
           name: "menu",
-          image: require('~/assets/images/menu/2.png'),
+          image: 'images/menu/2.png'
       },
      },
      {
        name: 'The Traveller',
-       image: require('~/assets/images/partners/3.png'),
+       image: 'images/partners/3.png',
        pdf: 'thetraveller.pdf',
        menu: {
          name: 'The Traveller Menu',
@@ -117,7 +117,7 @@ export default {
        },
        menu2: {
           name: "menu",
-          image: require('~/assets/images/menu/3.png'),
+          image: 'images/menu/3.png'
       },
      },
    ]

@@ -3,11 +3,12 @@
     <!-- MOBIEL -->
     <div class="grid grid-cols-2 lg:hidden py-12" >
       <h3 class="" >Max Deenik</h3>
-      <img class=" object-cover h-48 w-48 rounded-full"  src="~/assets/images/person/1.png" alt="Max Deenik">
+      <!-- <img class=" object-cover h-48 w-48 rounded-full"  src="~/assets/images/person/1.png" alt="Max Deenik"> -->
+      <nuxt-image class=" object-cover h-48 w-48 rounded-full"  src="images/person/1.png" alt="Max Deenik" />
     </div>
     <!-- DESKTOP -->
     <div class="hidden lg:block relative h-full w-full  " >
-      <img class="absolute object-cover h-full rounded-full" style="left:-25%; " src="~/assets/images/person/1.png" alt="Max Deenik">
+      <nuxt-image :placeholder="true" class="absolute object-cover h-full rounded-full" style="left:-25%; "  src="images/person/1.png" alt="Max Deenik test" />
     </div>
 
     <div>
@@ -27,14 +28,15 @@
 
 
 <script lang='ts' >
-export default {
+import { defineComponent } from "@nuxtjs/composition-api";
+export default defineComponent({
  props: [],
  components: {},
  setup() {
    
    
  }
-}
+})
 
 
 </script>
