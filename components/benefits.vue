@@ -1,5 +1,6 @@
 <template>
 <div class="flex flex-col lg:flex-row container relative" >
+<!-- <div class="flex flex-col lg:flex-row  relative" > -->
   <div class="flex flex-col">
   <div class="h-32" ></div>
   <div class="flex flex-col gap-12" >
@@ -14,9 +15,9 @@
   <div class="h-32" ></div>
   </div>
 
-  <div class="w-96 flex h-auto relative"  >
+  <div class="w-96 flex h-auto relative "  >
     <!-- <img class="block lg:hidden object-contain"   src="~/assets/images/benefits/food.png" alt="food"> -->
-    <img class="hidden lg:block absolute top-0 left-0  h-full object-contain" style="min-width:200%;"   src="~/assets/images/benefits/food.png" alt="food">
+    <img class="hidden lg:block relative h-full object-contain" style="min-width:200%;"   src="~/assets/images/benefits/food.png" alt="food">
   </div>
 
 </div>

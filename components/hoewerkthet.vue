@@ -6,9 +6,11 @@
 <div class="grid grid-cols-3 gap-4 relative container" style="grid-template-columns: 10% 1fr 40%" > 
 
   <!-- IMAGES -->
-  <div v-for="(item,index) in items" :key="index" v-show="progress < (index+1)*33 && progress >index*33" class="absolute h-full w-64 " style="left:-15vw;" >
-    <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
-  </div>
+  <transition name="fade" v-for="(item,index) in items" :key="index">
+    <div v-show="progress < (index+1)*34 && progress >index*34" class="absolute h-full w-64 " style="left:-15vw;" >
+      <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
+    </div>
+  </transition>
   <div></div>
   <!-- SELECTOR -->
   <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
@@ -16,18 +18,20 @@
       :key="indexItem"
       @click="selected=indexItem">
 
-      <div v-if="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
-        <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
+      <div v-show="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
+        <div :class="[progress>indexItem*34 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
       </div>
-      <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
-      <div :class="[progress>indexItem*33 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
+      <div :class="[progress>indexItem*34 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
+      <div :class="[progress>indexItem*34 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
     </li>
   </ul> 
 
   <!-- CONTENT -->
-  <div v-show="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center" v-for="(item,index) in items" :key="index" >
-    <p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p>
-  </div>
+  <transition name='fade' mode="out-in" >
+    <template v-for="(item,index) in items"   >
+      <div :key='index' v-if="progress < (index+1)*34 && progress >index*34" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
+    </template>
+  </transition>
 
 </div>
 </div>
@@ -82,6 +86,7 @@ export default defineComponent({
         markers: true,
         scrub:5,
         pin:true,
+        snap: 1/3,
         onUpdate: (self) => progress.value=Number(self.progress.toFixed(3))*100,
         start: "center center",
         end: '1000px'
@@ -102,8 +107,18 @@ export default defineComponent({
 </script>
 
 
-<style lang='scss' module>
- 
+<style lang='scss' >
+ .fade-enter-active, .fade-leave-active {
+  transition: all 500ms;
+  // max-width: 0px;
+}
+.fade-enter-active{
+  // transition-delay: 700ms;
+  // max-width: 2000px;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
+}
  
 //POWERED BY AUSTIN
 </style>
