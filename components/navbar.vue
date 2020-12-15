@@ -46,7 +46,7 @@
           <a class="transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
           <a class="transition-all transform scale-100 hover:scale-125" href="#Menus">MENU</a>
           <a class="transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="#Impressies">IMPRESSIES</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="iImpressies">IMPRESSIES</a>
           <div class="flex justify-evenly" >
             <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
             <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
