@@ -47,21 +47,21 @@
 
 <script lang='ts' >
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
-// import { gsap } from "gsap";
-// import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default defineComponent({
  props: [],
  components: {},
-  head() {
-    return {
-      script: [
-        {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'},
-        {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js'}
-      ],
-    }
-  },
+  // head() {
+  //   return {
+  //     script: [
+  //       {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'},
+  //       {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js'}
+  //     ],
+  //   }
+  // },
  setup() {
 
    const items = [
