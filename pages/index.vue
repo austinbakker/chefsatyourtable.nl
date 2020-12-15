@@ -28,15 +28,13 @@
     </div> -->
   <!-- END PARTNERS -->
 
-  <!-- HOE WERKT HET -->
-    <!-- <HoeWerktHet /> -->
-  <!-- END HOE WERKT HET -->
+<HoeWerktHet />
 
-  <!-- EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
-  <!-- <ExtraMogelijkhedenLocatie /> -->
-  <!-- END EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
+<!-- NOTE responsive -->
+<!-- <ExtraMogelijkhedenLocatie /> -->
 
-<Benefits />
+<!-- NOTE responsive -->
+<!-- <Benefits /> -->
 
 <!-- NOTE responsive -->
 <!-- <Menus /> -->
