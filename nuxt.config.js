@@ -1,6 +1,9 @@
 export default {
   ssr: true,
   target: 'static',
+  htmlAttrs: {
+    lang: 'nl'
+  },
   buildModules: [
     '@nuxtjs/composition-api',
     '@aceforth/nuxt-optimized-images',

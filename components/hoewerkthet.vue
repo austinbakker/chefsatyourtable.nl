@@ -49,10 +49,19 @@
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
 // import { gsap } from "gsap";
 // import { ScrollTrigger } from "gsap/ScrollTrigger";
+// import ScrollTrigger from "gsap/ScrollTrigger";
+// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default defineComponent({
  props: [],
  components: {},
-
+  head() {
+    return {
+      script: [
+        {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'},
+        {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js'}
+      ],
+    }
+  },
  setup() {
 
    const items = [
@@ -87,25 +96,25 @@ export default defineComponent({
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
 
       // NOTE gives error
-      // gsap.registerPlugin(ScrollTrigger);
-      // // console.log('gasp',gsap)
-      // ScrollTrigger.create({
-      //   trigger: '#hoewerkthet-1234',
-      //   markers: true,
-      //   scrub:1,
-      //   pin:true,
-      //   snap: 1/2.97,
-      //   onUpdate: (self) => {
-      //     let progressCheck = Number(self.progress.toFixed(3))*100;
-      //     console.log(progressCheck)
-      //     if(!progressCheck) {
-      //       progress.value=1;
-      //     } else if(progressCheck>99) {progress.value=90}
-      //     else{progress.value=progressCheck}
-      //   },
-      //   // start: "center center",
-      //   end: '1300px'
-      // })
+      gsap.registerPlugin(ScrollTrigger);
+      // console.log('gasp',gsap)
+      ScrollTrigger.create({
+        trigger: '#hoewerkthet-1234',
+        markers: true,
+        scrub:1,
+        pin:true,
+        snap: 1/2.97,
+        onUpdate: (self) => {
+          let progressCheck = Number(self.progress.toFixed(3))*100;
+          console.log(progressCheck)
+          if(!progressCheck) {
+            progress.value=1;
+          } else if(progressCheck>99) {progress.value=90}
+          else{progress.value=progressCheck}
+        },
+        // start: "center center",
+        end: '1300px'
+      })
     })
    const selected = ref(0)
    return {

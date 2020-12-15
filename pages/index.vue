@@ -32,8 +32,8 @@
 <div class="my-12" id="partner" ><Partners :partners='partners'/></div>
     
 <!-- NOTE responsive -->
-<div class="h-96 " >
-  <img class=" h-full object-cover md:object-contain" src="~/assets/images/food.png" alt="food">
+<div class="h-96 w-full " >
+  <img class=" h-full object-cover md:object-cover w-full" src="~/assets/images/food.png" alt="food">
 </div>
 <!-- END PARTNERS -->
 
