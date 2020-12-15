@@ -11,7 +11,7 @@
 </div> 
 
 <!-- NOTE responsive -->
-<Hero />
+<Hero @click="showContactForm=true"/>
 
 <div class="my-12" id="overons" ><Overons /></div>
 
