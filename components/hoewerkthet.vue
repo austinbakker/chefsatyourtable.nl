@@ -46,8 +46,8 @@
 
 <script lang='ts' >
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default defineComponent({
