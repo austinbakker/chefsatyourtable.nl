@@ -21,12 +21,12 @@ export default defineComponent({
 
  setup() {
    const images = [
-     require('~/assets/images/impressies/1.png'),
-     require('~/assets/images/impressies/2.png'),
-     require('~/assets/images/impressies/3.png'),
-     require('~/assets/images/impressies/4.png'),
-     require('~/assets/images/impressies/5.png'),
-     require('~/assets/images/impressies/6.png'),
+     'images/impressies/1.png',
+     'images/impressies/2.png',
+     'images/impressies/3.png',
+     'images/impressies/4.png',
+     'images/impressies/5.png',
+     'images/impressies/6.png'
    ]
 
    return {

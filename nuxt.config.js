@@ -1,5 +1,5 @@
 export default {
-  ssr: false,
+  ssr: true,
   target: 'static',
   buildModules: [
     '@nuxtjs/composition-api',
@@ -10,7 +10,7 @@ export default {
     optimizeImages: true
   },
   head: {
-    titleTemplate: '%s - Nuxt.js',
+    titleTemplate: 'Chefs At Your Table',
     meta: [
       { charset: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },

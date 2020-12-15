@@ -13,7 +13,7 @@
 
         <!-- desktop version -->
         <div v-if="progress < (index+1)*33 && progress >index*33" :key="index" class="relative md:absolute mx-auto w-24 h-24 md:w-64 md:h-64 custom-image-responsive" style="" >
-          <img class="relative md:absolute md:-left-1/4 h-full object-cover" :src="item.image" alt="image of food">
+          <nuxt-image class="relative md:absolute md:-left-1/4 h-full object-cover" :src="item.image" alt="image of food" />
         </div>
       </template>
     </transition>
@@ -58,7 +58,7 @@ export default defineComponent({
    const items = [
      {
        name: 'Voorafgaand',
-       image: require('~/assets/images/hoewerkthet/1.png'),
+       image: 'images/hoewerkthet/1.png',
        content: [
          'Op het vooraf besproken tijdstip meldt Chefs At Your Table zich bij u thuis of op locatie. Hierbij hebben wij het passende servies, glaswerk, bestek en linnengoed meegenomen om uw tafel om te toveren tot een sfeervol restaurant.',
          'Wij brengen de keuken in gereedheid en bergen alle ingrediënten op. Vervolgens zal de Chef zich terugtrekken in de keuken om het menu te bereiden. Terwijl uw huiskamer zich langzaam vult met verrukkelijke geuren heeft u de tijd om heerlijk bij te praten met uw gezelschap onder het genot van een aperitief.'
@@ -66,14 +66,14 @@ export default defineComponent({
      },
      {
        name: 'Tijdens',
-       image: require('~/assets/images/hoewerkthet/2.png'),
+       image: 'images/hoewerkthet/2.png',
        content: [
          'Zodra alle gasten zijn gearriveerd, beginnen we met een amuse om de smaakpapillen op gang te brengen. Daarna zullen wij het menu voortzetten met de volgende gangen. Tijdens het eten voorziet onze gastvrouw of gastheer u van de bijpassende wijnen en licht de Chef ieder gerecht toe. Hier hebben de gasten alle mogelijkheid om vragen te stellen. Heeft u behoefte aan meer privacy? Dan stellen wij ons terughoudend op.',
        ]
      },
      {
        name: 'Na afloop',
-       image: require('~/assets/images/hoewerkthet/3.png'),
+       image: 'images/hoewerkthet/3.png',
        content: [
          'Terwijl u nog lekker natafelt, zorgen wij ervoor dat uw huiskamer en keuken worden opgeruimd. U heeft zelf geen omkijken naar de afwas en na afloop van het diner ziet uw keuken er weer spic en span uit.',
        ]

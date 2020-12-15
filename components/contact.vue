@@ -12,7 +12,7 @@
       </div>
     </div>
     <div class=" items-center hidden lg:flex " >
-      <img class="h-5/6 object-contain" src="~/assets/images/contact/1.png" alt="food">
+      <nuxt-image class="h-5/6 object-contain" src="images/contact/1.png" alt="food" />
     </div>
   </div>
 </template>

@@ -8,6 +8,7 @@
           class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden"
           v-show="selected==index"
           :src="image" alt="hero image 1">
+
       </transition>
     </div>
     <!-- END -  IMAGES -->
@@ -34,6 +35,12 @@ export default defineComponent({
  components: {},
  setup() {
    const selected = ref(0)
+    // const images = [
+    //   require('~/static/images/hero/1.jpg'),
+    //   require('~/static/images/hero/2.jpg'),
+    //   require('~/static/images/hero/3.jpg'),
+    // ]
+
     const images = [
       require('~/assets/images/hero/1.jpg?resize&size=1920'),
       require('~/assets/images/hero/2.jpg?resize&size=1920'),

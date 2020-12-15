@@ -86,32 +86,29 @@ import Footer from "./../components/footer.vue";
 import ContactForm from "./../components/contactform.vue";
 export default defineComponent({
  props: [],
- components: {
-   ContactForm,
-   Footer,
-   Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
+ components: {ContactForm, Footer,Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
     const showContactForm = ref(false)
     const partners = [
-     {name: 'Visaandeschelde', img: require('~/assets/images/partners/1.png')},
-     {name: 'The Traveller', img: require('~/assets/images/partners/3.png')},
-     {name: 'The Roast Room', img: require('~/assets/images/partners/2.png')}
+     {name: 'Visaandeschelde', img: 'images/partners/1.png'},
+     {name: 'The Traveller', img: 'images/partners/3.png'},
+     {name: 'The Roast Room', img: 'images/partners/2.png'}
    ]
 
    const socials = [
      {
        name: 'Instagram',
-       image: require('~/assets/images/socials/instagram.svg'),
+       image: 'mages/socials/instagram.svg',
        url: 'https://www.instagram.com/chefsatyourtable/'
      },
      {
        name: 'Facebook',
-       image: require('~/assets/images/socials/facebook.svg'),
+       image: 'images/socials/facebook.svg',
        url: 'https://www.facebook.com/ChefsatyourTable'
      },
      {
        name: 'Linkedin',
-       image: require('~/assets/images/socials/linkedin.svg'),
+       image: 'images/socials/linkedin.svg',
        url: 'https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl'
      },
    ]

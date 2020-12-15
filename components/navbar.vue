@@ -12,7 +12,7 @@
     
 
     <!-- START - ITEMS  -->
-      <div class="text-gold flex gap-5 items-center" style="font-family: GlacialIndifferenceBold"  >
+      <div class="text-gold grid-auto-columns gap-5 items-center" style="font-family: GlacialIndifferenceBold"  >
         <a class="transition-all transform scale-100 hover:scale-125" href="">OVER ONS</a>
         <a class="transition-all transform scale-100 hover:scale-125" href="">PARTNERS</a>
         <a class="transition-all transform scale-100 hover:scale-125" href="">HOE WERKT HET</a>
