@@ -100,7 +100,7 @@ export default defineComponent({
       // console.log('gasp',gsap)
       ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        markers: true,
+        markers: false,
         scrub:1,
         pin:true,
         snap: 1/2.97,

@@ -15,14 +15,15 @@
 
 <div class="my-12" id="overons" ><Overons /></div>
 
-<form action="POST" data-netlify="true"  >
+<!-- TODO SETUP FORM -->
+<!-- <form action="POST" data-netlify="true"  >
   <p>
     <label>Your Name: <input type="text" name="name" /></label>   
   </p>
   <p>
     <button type="submit">Send</button>
   </p>
-</form>
+</form> -->
 
 <!-- NOTE responsive -->
 <div class="my-12" id="person" ><Person /></div>
