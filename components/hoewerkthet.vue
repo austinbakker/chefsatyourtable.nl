@@ -7,14 +7,13 @@
 <div class="grid  gap-4 relative container custom-grid " style=""  > 
 
   <!-- IMAGES -->
-  <div class="w-8 h-8" >
-    testing
+  <div class="relative" >
     <transition name="fade" mode="out-in" >
       <template v-for="(item,index) in items"  >
 
         <!-- desktop version -->
-        <div v-if="progress < (index+1)*34 && progress >index*34" :key="index" class="relative md:absolute h-full w-64 " style="left:-15vw;" >
-          <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
+        <div v-if="progress < (index+1)*33 && progress >index*33" :key="index" class="relative md:absolute mx-auto w-24 h-24 md:w-64 md:h-64 custom-image-responsive" style="" >
+          <img class="relative md:absolute md:-left-1/4 h-full object-cover" :src="item.image" alt="image of food">
         </div>
       </template>
     </transition>
@@ -27,17 +26,17 @@
       @click="selected=indexItem">
 
       <div v-show="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
-        <div :class="[progress>indexItem*34 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
+        <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
       </div>
-      <div :class="[progress>indexItem*34 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
-      <div :class="[progress>indexItem*34 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
+      <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
+      <div :class="[progress>indexItem*33 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
     </li>
   </ul> 
 
   <!-- CONTENT -->
   <transition name='fade' mode="out-in" >
     <template v-for="(item,index) in items"   >
-      <div :key='index' v-if="progress < (index+1)*34 && progress >index*34" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
+      <div :key='index' v-if="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
     </template>
   </transition>
 
@@ -94,10 +93,17 @@ export default defineComponent({
         markers: true,
         scrub:5,
         pin:true,
-        snap: 1/3,
+        snap: 1/2.97,
         onUpdate: (self) => {
           let progressCheck = Number(self.progress.toFixed(3))*100;
-          (progressCheck) ? progress.value=progressCheck : progress.value=1
+          console.log(progressCheck)
+          // if (progressCheck>30 && progressCheck<35) {
+          //   progress.value=35
+          // }else
+          if(!progressCheck) {
+            progress.value=1;
+          } else if(progressCheck>99) {progress.value=90}
+          else{progress.value=progressCheck}
         },
         start: "center center",
         end: '1000px'
@@ -134,7 +140,16 @@ export default defineComponent({
   @media (min-width: 768px) {
     grid-template-columns: 10% 1fr 40%;
   }
-  grid-template-columns: 1fr
+  grid-template-columns: 1fr;
+  grid-template-rows: 10% 1fr 40%;
+}
+.custom-image-responsive{
+    @media (min-width: 768px) {
+    left:-15vw;
+
+  }
+    left:0;
+
 }
 //POWERED BY AUSTIN
 </style>
