@@ -40,7 +40,7 @@
     <div class="absolute bg-green w-screen" >
       <transition name="fade">
         <div v-if="menu" class=" min-h-screen h-screen container flex flex-col text-center text-white" >
-          <div class="h-32"></div> <!-- NAVBAR SPACER -->
+          <div class="h-4"></div> <!-- NAVBAR SPACER -->
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125 " href="#overons">OVER ONS</a>
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#partner">PARTNERS</a>
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
