@@ -3,10 +3,13 @@
   <div class="flex  w-full" style="" >
 
     <form name="contact"
-      method="POST" data-netlify="true"
+      method="POST" data-netlify="true" netlify-honeypot="bot-field"
       action='/bedankt/'
       class="w-full flex flex-col ">
      
+       <p class="hidden">
+          <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+        </p>
 
 <!-- START - overvioew  -->
 <div class="h-72 flex" >
