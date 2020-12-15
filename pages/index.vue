@@ -15,8 +15,9 @@
 
 <div class="my-12" id="overons" ><Overons /></div>
 
-<form action="POST" data-netlify="true" >
-  <input type="text" name="testing">
+<form action="POST" data-netlify="true" style="background:red;" class="flex flex-col p-5" name="test" >
+  <input type="text" name="testing" />
+  <button>submit</button>
 </form>
 
 <!-- NOTE responsive -->
