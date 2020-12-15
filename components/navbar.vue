@@ -13,12 +13,12 @@
 
     <!-- START - ITEMS  -->
       <div class="text-gold flex gap-5 items-center" style="font-family: GlacialIndifferenceBold"  >
-        <a class="transition-all transform scale-100 hover:scale-125" href="">OVER ONS</a>
-        <a class="transition-all transform scale-100 hover:scale-125" href="">PARTNERS</a>
-        <a class="transition-all transform scale-100 hover:scale-125" href="">HOE WERKT HET</a>
-        <a class="transition-all transform scale-100 hover:scale-125" href="">MENU</a>
-        <a class="transition-all transform scale-100 hover:scale-125" href="">CONTACT</a>
-        <a class="transition-all transform scale-100 hover:scale-125" href="">IMPRESSIES</a>
+        <a class="transition-all transform scale-100 hover:scale-125" href="#overons">OVER ONS</a>
+        <a class="transition-all transform scale-100 hover:scale-125" href="#partner">PARTNERS</a>
+        <a class="transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
+        <a class="transition-all transform scale-100 hover:scale-125" href="#Menus">MENU</a>
+        <a class="transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
+        <a class="transition-all transform scale-100 hover:scale-125" href="#Impressies">IMPRESSIES</a>
         <a v-for="(social,index) in socials" :key='index' :href="social.url">
           <img :src="social.image" :alt="social.name" class="h-4 w-4 transition-all transform scale-100 hover:scale-125">
         </a>
@@ -41,12 +41,12 @@
       <transition name="fade">
         <div v-if="menu" class=" min-h-screen h-screen container flex flex-col text-center gap-5" >
           <div class="h-32"></div> <!-- NAVBAR SPACER -->
-          <a class="transition-all transform scale-100 hover:scale-125" href="">OVER ONS</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="">PARTNERS</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="">HOE WERKT HET</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="">MENU</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="">CONTACT</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="">IMPRESSIES</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="#overons">OVER ONS</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="#partner">PARTNERS</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="#Menus">MENU</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
+          <a class="transition-all transform scale-100 hover:scale-125" href="#Impressies">IMPRESSIES</a>
           <div class="flex justify-evenly" >
             <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
             <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>

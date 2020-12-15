@@ -14,15 +14,15 @@
     <Hero />
   <!-- END HERO -->
 
-<div class="my-12" ><Overons /></div>
+<div class="my-12" id="overons" ><Overons /></div>
 
 
 <!-- NOTE responsive -->
-<div class="my-12" ><Person /></div>
+<div class="my-12" id="person" ><Person /></div>
     
 
 <!-- NOTE responsive -->
-<div class="my-12" ><Partners :partners='partners'/></div>
+<div class="my-12" id="partner" ><Partners :partners='partners'/></div>
     
 <!-- TODO fix image being absolute -->
 <!-- <div>
@@ -32,35 +32,31 @@
 
 
 <!-- NOTE responsive -->
-<div class="my-8" ><HoeWerktHet /></div>
+<div class="my-8" id="hoewerkthet" ><HoeWerktHet /></div>
 
 
 <!-- NOTE responsive -->
-<div class="my-8" ><ExtraMogelijkhedenLocatie /></div>
+<div class="my-8" id="ExtraMogelijkhedenLocatie" ><ExtraMogelijkhedenLocatie /></div>
 
 
 <!-- NOTE responsive -->
-<div class="my-8" ><Benefits /></div>
+<div class="my-8" id="#Benefits" ><Benefits /></div>
 
 
 <!-- NOTE responsive -->
-<div class="my-8"><Menus /></div>
+<div class="my-8" id="Menus" ><Menus /></div>
 
 
 
 <!-- NOTE responsive -->
-<div class="my-8" ><Contact @click="showContactForm=true" /></div>
+<div class="my-8" id="contact" ><Contact @click="showContactForm=true" /></div>
 
 
 <!-- NOTE responsive -->
-<div class="my-24" >
-  <Impressies />
-</div>
+<div class="my-24" id="Impressies" ><Impressies /></div>
 
 <!-- NOTE responsive -->
-<div class="my-24" >
-  <Footer :socials='socials' /> 
-</div>
+<div class="my-24" id="footer" ><Footer :socials='socials' /> </div>
 
   
 </div>
