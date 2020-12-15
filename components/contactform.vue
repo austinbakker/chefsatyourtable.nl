@@ -2,14 +2,11 @@
 <div class="h-screen flex bg-white" style=""  >
   <div class="flex  w-full" style="" >
 
-    <form name='contact'
-      method='POST'
-      data-netlify="true"
-      data-netlify-honeypot="bot-field"
-      action='bedankt/'
+    <form name="contact"
+      method="POST" data-netlify="true"
+      action='/bedankt/'
       class="w-full flex flex-col ">
-      <input name="bot-field" style="display:none;" />
-      <input type="hidden" name="form-name" value="contact" />
+     
 
 <!-- START - overvioew  -->
 <div class="h-72 flex" >
