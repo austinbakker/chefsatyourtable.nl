@@ -15,7 +15,7 @@
   </div>
 
   <div class="w-96 flex h-auto relative"  >
-    <img class="block lg:hidden object-contain"   src="~/assets/images/benefits/food.png" alt="food">
+    <!-- <img class="block lg:hidden object-contain"   src="~/assets/images/benefits/food.png" alt="food"> -->
     <img class="hidden lg:block absolute top-0 left-0  h-full object-contain" style="min-width:200%;"   src="~/assets/images/benefits/food.png" alt="food">
   </div>
 
