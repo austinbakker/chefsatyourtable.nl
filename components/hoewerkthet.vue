@@ -1,17 +1,25 @@
 <template>
 
-<div id="hoewerkthet-1234" class="" >
-<h2 class="text-center" >HOE WERKT HET <div>{{progress}}</div> </h2>
+<div id="hoewerkthet-1234" class="h-screen flex flex-col justify-evenly" >
+<h2 class="text-center" >HOE WERKT HET {{progress}} </h2>
           
-<div class="grid grid-cols-3 gap-4 relative container" style="grid-template-columns: 10% 1fr 40%" > 
+<div class="grid  gap-4 relative container " style="grid-template-columns: 10% 1fr 40%"  > 
 
   <!-- IMAGES -->
-  <transition name="fade" v-for="(item,index) in items" :key="index">
-    <div v-show="progress < (index+1)*34 && progress >index*34" class="absolute h-full w-64 " style="left:-15vw;" >
-      <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
-    </div>
-  </transition>
-  <div></div>
+  <div>
+    <transition name="fade" mode="out-in" >
+      <template v-for="(item,index) in items"  >
+        <!-- <div v-if="progress < (index+1)*34 && progress >index*34" :key="index" class="md:hidden flex relative md:absolute h-48 w-48 mx-auto text-center " >
+          <img class="relative md:absolute md:-left-1/4 md:h-64 object-cover" :src="item.image" alt="image of food">
+        </div> -->
+        <!-- desktop version -->
+        <div v-if="progress < (index+1)*34 && progress >index*34" :key="index" class="hidden md:block absolute h-full w-64 " style="left:-15vw;" >
+          <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
+        </div>
+      </template>
+    </transition>
+  </div>
+
   <!-- SELECTOR -->
   <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
     <li class="flex items-center relative " v-for="(item,indexItem) in items"
@@ -87,7 +95,10 @@ export default defineComponent({
         scrub:5,
         pin:true,
         snap: 1/3,
-        onUpdate: (self) => progress.value=Number(self.progress.toFixed(3))*100,
+        onUpdate: (self) => {
+          let progressCheck = Number(self.progress.toFixed(3))*100;
+          (progressCheck) ? progress.value=progressCheck : progress.value=1
+        },
         start: "center center",
         end: '1000px'
       })
@@ -119,7 +130,12 @@ export default defineComponent({
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
- 
+.grid-reponsive{
+  @media (min-width: 768px) {
+    grid-template-columns: 10% 1fr 40%;
+  }
+  grid-template-columns: 1fr;
+}
 //POWERED BY AUSTIN
 </style>
  
