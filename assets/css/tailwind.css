@@ -42,10 +42,11 @@ h3{
   /* font-size: 48px; */
 }
 h4{
-  font-size: clamp(12px, 2.2vw, 32px);;
+  font-size: clamp(12px, 2vw, 32px);;
 }
 h5{
-  font-size: 24px;
+  font-size: clamp(10px, 2.2vw, 24px);;
+  /* font-size: 24px; */
 }
 h6{
   font-size: 18px;

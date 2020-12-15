@@ -1,17 +1,17 @@
 <template>
  <div>
-   {{selectedDate}}
- <div class="flex w-full justify-evenly mx-auto" >
+   <!-- {{selectedDate}} -->
+ <div class="flex w-full justify-evenly mx-auto md:flex-row flex-col" >
 
    <!-- START DAY -->
-   <div class="relative transition-all duration-300 hover:shadow-0" >
+   <div class="relative transition-all  duration-300 hover:shadow-0" >
      <!-- viewer -->
      <h6 class="text-center" >DAG</h6>
      <div @click="open.day=!open.day" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
        {{ selectedDate.get('day') }}
      </div>
      <!-- list -->
-     <div v-show="open.day" class="shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+     <div v-show="open.day" class="z-20 shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
        <div @click="setDate(day)" class="hover:bg-gray"  v-for="(day,index) in days" :key="index" v-show="day.get('day')!=selectedDate.get('day')" >{{ selectedDate.get('day') }}</div>
      </div>
    </div>
@@ -26,7 +26,7 @@
        {{ new Date(selectedDate).toLocaleString([], {month: 'long'}) }}
      </div>
      <!-- list -->
-     <div v-show="open.month" class="shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+     <div v-show="open.month" class="z-20 shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling " style="background:red;" >
        <div @click="setDate(month)" class="hover:bg-gray"  v-for="(month,index) in months" :key="index" v-show="new Date(month).toLocaleString([],{ month: 'numeric' })!=new Date(selectedDate).toLocaleString([],{ month: 'numeric' })" >{{ new Date(month).toLocaleString([], {month: 'long'}) }}</div>
      </div>
    </div>
@@ -43,7 +43,7 @@
        {{new Date(selectedDate).toLocaleString([],{ year: 'numeric' })}}
      </div>
      <!-- list -->
-     <div v-show="open.year" class="shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+     <div v-show="open.year" class="z-20 shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
        <div @click="setYear(year)" class="hover:bg-gray"  v-for="(year,index) in years" :key="index" v-show="new Date(year).toLocaleString([],{ year: 'numeric' })!=new Date(selectedDate).toLocaleString([],{ year: 'numeric' })" >{{new Date(year).toLocaleString([],{ year: 'numeric' })}}</div>
      </div>
    </div>

@@ -10,7 +10,6 @@
   <div class="relative" >
     <transition name="fade" mode="out-in" >
       <template v-for="(item,index) in items"  >
-
         <!-- desktop version -->
         <div v-if="progress < (index+1)*33 && progress >index*33" :key="index" class="relative md:absolute mx-auto w-24 h-24 md:w-64 md:h-64 custom-image-responsive" style="" >
           <img class="relative md:absolute md:-left-1/4 h-full object-cover" :src="item.image" alt="image of food">

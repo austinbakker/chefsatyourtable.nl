@@ -12,13 +12,13 @@
         </p>
 
 <!-- START - overvioew  -->
-<div class="h-72 flex" >
-  <img @click="$emit('click')" class="h-48 w-48 object-contain rounded-br-md"  src="~/assets/images/logo.png" alt="logo">
+<div class="h-72 flex flex-col md:flex-row" >
+  <img @click="$emit('click')" class="md:mx-0 mx-auto h-48 w-48 object-contain md:rounded-br-md"  src="~/assets/images/logo.png" alt="logo">
   <div class="flex justify-evenly items-center flex-1" >
-    <h3 @click="stage=0" :class="[stage==0 ? 'text-green' : 'text-gold', 'transition-colors' ]" >RESTAURANT</h3>
-    <h3 @click="stage=1" :class="[stage==1 ? 'text-green' : 'text-gold', 'transition-colors' ]" >PERSONEN</h3>
-    <h3 @click="stage=2" :class="[stage==2 ? 'text-green' : 'text-gold', 'transition-colors' ]" >DATUM</h3>
-    <h3 @click="stage=3" :class="[stage==3 ? 'text-green' : 'text-gold', 'transition-colors' ]" >CONTACT</h3>
+    <h4 @click="stage=0" :class="[stage==0 ? 'text-green' : 'text-gold', 'transition-colors' ]" >RESTAURANT</h4>
+    <h4 @click="stage=1" :class="[stage==1 ? 'text-green' : 'text-gold', 'transition-colors' ]" >PERSONEN</h4>
+    <h4 @click="stage=2" :class="[stage==2 ? 'text-green' : 'text-gold', 'transition-colors' ]" >DATUM</h4>
+    <h4 @click="stage=3" :class="[stage==3 ? 'text-green' : 'text-gold', 'transition-colors' ]" >CONTACT</h4>
   </div>
 </div>
 <!-- END -  overvioew -->
@@ -29,12 +29,12 @@
 <!-- START - stage 1  -->
       <div v-show="stage==0" class="flex flex-col gap-20 "  >
         <div class="flex-1 flex flex-col gap-20" >
-          <h4 class="text-center font-normal" >Welk restaurant wilt u thuis?</h4>
+          <h3 class="text-center font-normal" >Welk restaurant wilt u thuis?</h3>
           <input type='hidden' name='resturant' v-model="resturant">
-          <ul class="flex justify-evenly w-full" >
-            <li @click="setResturant(partner)" :class="[resturant==partner ? 'border-green' : 'border-white','shadow-xl bg-white text-green font-bold px-24 py-6 rounded-lg border-3  hover:border-gold transform hover:scale-110 transition-all duration-150']"
+          <ul class="flex flex-col md:flex-row justify-evenly h-auto w-64 md:w-full mx-auto" >
+            <li @click="setResturant(partner)" :class="[resturant==partner ? 'border-green' : 'border-white','text-center my-4 md:my-0 py-4 md:py-6 shadow-xl bg-white text-green font-bold px-4 md:px-24  rounded-lg border-3  hover:border-gold transform hover:scale-110 transition-all duration-150']"
               v-for="(partner,index) in partners" :key="index">
-              <h5>{{partner.name}}</h5>
+              <h5 class="md:block inline" >{{partner.name}}</h5>
             </li>
           </ul>
         </div>
@@ -43,35 +43,35 @@
 
 <!-- START - stage 2  -->
 <div v-show="stage==1" class="flex items-center container gap-40" >
-  <div @click="stage--" class="shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300 flex place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
   <div class="flex-1 flex flex-col" >
-    <h4 class="text-center" >Aantal Personen?</h4>
+    <h3 class="text-center" >Aantal Personen?</h3>
     <div class="max-w-5xl mx-auto w-full" >
       <h2 class="text-center" >{{personen}}</h2>
       <input name="personen" type="range" min="2" max="50" v-model='personen' class="slider" id="myRange">
     </div>
   </div>
-  <div @click="stage++" class="shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300 flex place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
 <!-- END -  stage 2 -->
 
 <!-- START - stage 3  -->
 <!-- <div v-show="stage==2" class="max-w-5xl mx-auto w-full flex flex-col gap-20" > -->
-<div v-show="stage==2" class="flex items-center container gap-40" >
-  <div @click="stage--" class="shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300 flex place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-  <div class="flex-1 flex flex-col" >
-    <h4 class="text-center" >Selecteer een datum en tijdstip</h4>
+<div v-show="stage==2" class="flex  items-center container gap-40" >
+  <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div class="flex-1 flex flex-col text-center" >
+    <h3 class="text-center" >Selecteer een datum en tijdstip</h3>
     <DatePicker />
   </div>
-  <div @click="stage++" class="shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300 flex place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
 <!-- END -  stage 3 -->
 
 
 <!-- START - STAGE 4  -->
-  <div v-show="stage==3" class="flex items-center container gap-40" >
-    <div @click="stage--" class="shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300 flex place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-    <div class="flex flex-col gap-10 w-full max-w-1xl mx-auto" >
+  <div v-show="stage==3" class="flex items-center container gap-40 " >
+    <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+    <div class="flex flex-col gap-10 w-full max-w-1xl mx-auto overflow-y-show h-3/4 shadow-2xl px-8 py-8 rounded-lg" style="" >
 
     <div class="w-full" >
       <h5>NAAM</h5>
@@ -100,7 +100,7 @@
     <button class="shadow-lg py-1 px-3 hover:border-green border-2 border-white rounded-lg"  type='submit'> <h4>VERSTUUR</h4> </button>
     </div>
 
-  <div class=" rounded-full w-24 h-24 border-2 border-white htransition-all duration-300 flex place-items-center" ></div>
+  <div class="hidden md:flex  rounded-full w-24 h-24 border-2 border-white htransition-all duration-300 place-items-center" ></div>
   </div>
 <!-- END -  STAGE 4 -->
 

@@ -1,8 +1,8 @@
 <template>
-  <div class="grid grid-cols-1 lg:grid-cols-2 py-64 items-center container" >
+  <div class="grid grid-cols-1 lg:grid-cols-2  items-center container" >
     <!-- MOBIEL -->
     <div class="grid md:grid-cols-2 lg:hidden py-12" >
-      <h3 class="text-center md:text-left" >Max Deenik</h3>
+      <h3 class="text-center md:text-left mt-4" >Max Deenik</h3>
       <div class="text-center" ><img class="mx-auto object-cover h-48 w-48 rounded-full"  src="~/assets/images/person/1.png" alt="Max Deenik"></div>
       
     </div>
