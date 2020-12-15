@@ -6,8 +6,8 @@
       method='POST'
       data-netlify="true"
       data-netlify-honeypot="bot-field"
-      action='bedankt/index.html'
-      class="w-full flex flex-col j">
+      action='bedankt'
+      class="w-full flex flex-col ">
       <input name="bot-field" style="display:none;" />
       <input type="hidden" name="form-name" value="contact" />
 
