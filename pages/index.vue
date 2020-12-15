@@ -1,9 +1,10 @@
 <template>
 <div class="relative overflow-x-hidden" >
 
-  <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
+  <!-- <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
     <ContactForm @click="showContactForm=false" :partners='partners' />
-  </div>
+  </div> -->
+  <ContactForm :partners='partners'/>
   <!-- START - NAVBAR  -->
     <div class="absolute top-0 w-screen" >
       <Navbar :socials='socials' />
