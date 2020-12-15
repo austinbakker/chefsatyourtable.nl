@@ -1,8 +1,8 @@
 <template>
 <div class="grid grid-cols-1 gap-24 md:gap-0 w-5/6 mx-auto md:w-full" >
 
-  <div class="grid grid-cols-1 items-center md:flex-row mx-auto md:ml-32 md:w-3/4 gap-10" >
-    <img class="mx-auto w-48 object-contain" src="~/assets/images/extramogelijkhedenlocatie/1.png" alt="food image">
+  <div class="flex flex-col  items-center md:flex-row mx-auto md:ml-32 md:w-3/4 " >
+    <img class="mx-auto md:mx-0 w-48 object-contain" src="~/assets/images/extramogelijkhedenlocatie/1.png" alt="food image">
     <div class="flex flex-col justify-center w-full md:w-96 md:ml-24 text-center md:text-left" >
       <h3>Extra mogelijkheden</h3>
       <p>Wilt u de avond net dat beetje extra geven? Dan is het mogelijk om een gekwalificeerde sommelier of bartender in te schakelen. Informeer gerust naar de mogelijkheden als u daar interesse in heeft.</p>
