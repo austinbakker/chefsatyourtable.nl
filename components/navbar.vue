@@ -63,7 +63,7 @@
 
 
 <script lang='ts' >
-import { defineComponent, ref } from "@nuxtjs/composition-api";
+import { defineComponent, ref, watch } from "@nuxtjs/composition-api";
 export default defineComponent({
  props: ['socials'],
  components: {},
@@ -84,9 +84,15 @@ export default defineComponent({
   // const enableScroll = () => { 
   //     window.onscroll = function() {}; 
   // } 
-
-
-   const menu = ref(false)
+  const noScroll = () => {
+    window.scrollTo(0, 0);
+  }
+  const menu = ref(false)
+  watch(menu, () => {
+    if(menu.value){
+      window.addEventListener('scroll', noScroll);
+    }else {window.removeEventListener('scroll', noScroll);}
+  })
    
    return{
      menu
