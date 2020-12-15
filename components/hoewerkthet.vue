@@ -91,22 +91,19 @@ export default defineComponent({
       ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
         markers: true,
-        scrub:5,
+        scrub:1,
         pin:true,
         snap: 1/2.97,
         onUpdate: (self) => {
           let progressCheck = Number(self.progress.toFixed(3))*100;
           console.log(progressCheck)
-          // if (progressCheck>30 && progressCheck<35) {
-          //   progress.value=35
-          // }else
           if(!progressCheck) {
             progress.value=1;
           } else if(progressCheck>99) {progress.value=90}
           else{progress.value=progressCheck}
         },
-        start: "center center",
-        end: '1000px'
+        // start: "center center",
+        end: '1300px'
       })
     })
    const selected = ref(0)
@@ -139,6 +136,7 @@ export default defineComponent({
 .custom-grid{
   @media (min-width: 768px) {
     grid-template-columns: 10% 1fr 40%;
+    grid-template-rows: 1fr;
   }
   grid-template-columns: 1fr;
   grid-template-rows: 10% 1fr 40%;

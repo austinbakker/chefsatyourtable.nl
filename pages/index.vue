@@ -1,37 +1,40 @@
 <template>
 <div class="relative overflow-x-hidden" >
+
   <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
     <ContactForm @click="showContactForm=false" :partners='partners' />
   </div>
   <!-- START - NAVBAR  -->
-    <!-- <div class="absolute top-0 w-screen" >
+    <div class="absolute top-0 w-screen" >
       <Navbar :socials='socials' />
-    </div> -->
+    </div> 
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
-    <!-- <Hero /> -->
+    <Hero />
   <!-- END HERO -->
 
   <!-- OVER ONS -->
-    <!-- <Overons /> -->
+    <Overons />
   <!-- END OVER ONS -->
 
   <!-- MAX -->
-    <!-- <Person /> -->
+    <Person />
   <!-- END MAX -->
 
   <!-- PARTNERS -->
-    <!-- <Partners :partners='partners'/>
-    <div>
-      <img src="~/assets/images/food.png" alt="food">
+    <Partners :partners='partners'/>
+    <!-- <div>
+      <img class="h-full md:h-auto object-cover md:object-contain" src="~/assets/images/food.png" alt="food">
     </div> -->
   <!-- END PARTNERS -->
 
+
+<!-- NOTE responsive -->
 <HoeWerktHet />
 
 <!-- NOTE responsive -->
-<!-- <ExtraMogelijkhedenLocatie /> -->
+<ExtraMogelijkhedenLocatie />
 
 <!-- NOTE responsive -->
 <Benefits />
@@ -71,7 +74,10 @@ import Footer from "./../components/footer.vue";
 import ContactForm from "./../components/contactform.vue";
 export default defineComponent({
  props: [],
- components: {ContactForm, Footer,Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
+ components: {
+   ContactForm,
+   Footer,
+   Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
     const showContactForm = ref(false)
     const partners = [
