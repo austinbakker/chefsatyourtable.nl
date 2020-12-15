@@ -1,9 +1,10 @@
 <template>
 
-<div id="hoewerkthet-1234" class="h-screen flex flex-col justify-evenly" >
-<h2 class="text-center" >HOE WERKT HET {{progress}} </h2>
+<div id="hoewerkthet-1234" class="h-screen flex flex-col justify-around md:justify-evenly" >
+<h2 class="text-center" >HOE WERKT HET 
+</h2>
           
-<div class="grid  gap-4 relative container " style="grid-template-columns: 10% 1fr 40%"  > 
+<div class="grid  gap-4 relative container custom-grid " style=""  > 
 
   <!-- IMAGES -->
   <div>
@@ -130,11 +131,11 @@ export default defineComponent({
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
   opacity: 0;
 }
-.grid-reponsive{
+.custom-grid{
   @media (min-width: 768px) {
     grid-template-columns: 10% 1fr 40%;
   }
-  grid-template-columns: 1fr;
+  grid-template-columns: 1fr
 }
 //POWERED BY AUSTIN
 </style>
