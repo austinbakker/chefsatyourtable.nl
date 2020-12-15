@@ -3,11 +3,15 @@
 <!-- <div class="flex flex-col lg:flex-row  relative" > -->
   <div class="flex flex-col">
   <div class="h-32" ></div>
-  <div class="flex flex-col gap-12" >
+  <!-- <div class="flex flex-col gap-12" > -->
+  <div class="grid w-5/6 gap-12" >
     <h2 class="text-center md:text-left" >WAT ZIT ERBIJ INBEGREPEN?</h2>
-    <ul class="flex flex-wrap items-center gap-16 justify-center md:justify-start" >
-      <li v-for="(item,index) in items" :key="index" >
-        <nuxt-image class="mx-auto h-16 w-16 object-contain" :src="item.image" :alt="item.name" />
+    <ul class="flex flex-wrap items-center  justify-center md:justify-start" >
+      <li class="mx-8" v-for="(item,index) in items" :key="index" >
+        <div class="mx-auto h-16 w-16 " >
+
+          <nuxt-image class="h-16 w-16" fit="contain" object-contain  :src="item.image" :alt="item.name" />
+        </div>
         <div class="mt-4 text-center" >{{item.name}}</div>
       </li>
     </ul>
