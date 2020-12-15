@@ -1,10 +1,12 @@
 <template>
-<div>
-  <ContactForm :partners='partners' />
+<div class="relative " >
+  <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
+    <ContactForm @click="showContactForm=false" :partners='partners' />
+  </div>
   <!-- START - NAVBAR  -->
-  <!-- <div class="absolute top-0 w-screen" >
+  <div class="absolute top-0 w-screen" >
     <Navbar :socials='socials' />
-  </div> -->
+  </div>
   <!-- END -  NAVBAR -->
   
   <!-- HERO -->
@@ -44,7 +46,7 @@
   
 
   <!-- START - CONTACT  -->
-    <Contact />
+    <Contact @click="showContactForm=true" />
   <!-- END -  CONTACT -->
   
   <!-- START - IMPRESSIES  -->
@@ -63,7 +65,7 @@
 
 
 <script lang='ts' >
-import { defineComponent } from "@nuxtjs/composition-api";
+import { defineComponent, ref } from "@nuxtjs/composition-api";
 import Navbar from "./../components/navbar.vue";
 import Hero from "./../components/hero.vue";
 import Overons from "./../components/overons.vue";
@@ -81,7 +83,7 @@ export default defineComponent({
  props: [],
  components: {ContactForm, Footer,Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
-   
+    const showContactForm = ref(false)
     const partners = [
      {name: 'Visaandeschelde', img: require('~/assets/images/partners/1.png')},
      {name: 'The Traveller', img: require('~/assets/images/partners/3.png')},
@@ -108,7 +110,8 @@ export default defineComponent({
 
    return {
      partners,
-     socials
+     socials,
+     showContactForm
    }
  }
 })
