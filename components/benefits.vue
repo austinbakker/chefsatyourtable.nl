@@ -3,8 +3,8 @@
   <div class="flex flex-col">
   <div class="h-32" ></div>
   <div class="flex flex-col gap-12" >
-    <h2>WAT ZIT ERBIJ INBEGREPEN?</h2>
-    <ul class="flex items-center gap-16" >
+    <h2 class="text-center md:text-left" >WAT ZIT ERBIJ INBEGREPEN?</h2>
+    <ul class="flex flex-wrap items-center gap-16 justify-center md:justify-start" >
       <li v-for="(item,index) in items" :key="index" >
         <img class="mx-auto h-16 w-16 object-contain" :src="item.image" :alt="item.name">
         <div class="mt-4 text-center" >{{item.name}}</div>

@@ -36,29 +36,21 @@
   <!-- <ExtraMogelijkhedenLocatie /> -->
   <!-- END EXTRA MOGELIJKHEDEN EN OP LOCATIE -->
 
-  <!-- START - WAT ZIT ERBIJ INBEGREPEN  -->
-    <!-- <Benefits /> -->
-  <!-- END -  WAT ZIT ERBIJ INBEGREPEN -->
+<Benefits />
 
-  <!-- START - MENU SELECTOR  -->
-    <!-- <Menus /> -->
-  <!-- END -  MENU SELECTOR -->
-  
+<!-- NOTE responsive -->
+<!-- <Menus /> -->
 
-  <!-- START - CONTACT  -->
-    <!-- <Contact @click="showContactForm=true" /> -->
-  <!-- END -  CONTACT -->
-  
-  <!-- START - IMPRESSIES  -->
-    <!-- <Impressies /> -->
-  <!-- END -  IMPRESSIES -->
-  
-  <!-- START - FOOTER  -->
-    <Footer :socials='socials' />
-  <!-- END -  FOOTER -->
-  <div class="h-screen" style="background:red;">
-    full screen item
-  </div>
+
+<!-- NOTE responsive -->
+<!-- <Contact @click="showContactForm=true" /> -->
+
+<!-- NOTE responsive -->
+<!-- <Impressies /> -->
+
+<!-- NOTE responsive -->
+<!-- <Footer :socials='socials' />  -->
+
   
 </div>
 </template>

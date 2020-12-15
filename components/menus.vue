@@ -4,10 +4,11 @@
 <ul>
   <li class="flex flex-col gap-24" v-for="(resturant,index) in resturants" :key="index" >
     <!-- LOGO -->
-    <div><img class="mx-auto w-96 h-96 object-contain" :src="resturant.image" :alt="resturant.name"></div>
+    <div><img class="mx-auto w-48 h-48 md:w-96 md:h-96 object-contain" :src="resturant.image" :alt="resturant.name"></div>
+
     <!-- MENU -->
-    <div class="flex flex-col gap-10 shadow-2xl w-4/6 mx-auto py-10 px-24 rounded-lg" >
-      <h4 class="text-center" >{{resturant.menu.name}}</h4>
+    <div class="flex flex-col gap-10 shadow-2xl w-5/6 md:w-4/6 mx-auto py-10 px-4 md:px-24 rounded-lg" >
+      <h3 class="text-center" >{{resturant.menu.name}}</h3>
       <ul class="flex flex-col gap-2"  >
         <li :style="{color: resturant.menu.color}" v-for="(item, indexItem) in resturant.menu.items" :key="indexItem" >{{item}}</li>
       </ul>
@@ -15,8 +16,8 @@
     </div>
 
     <!-- SECOND MENU -->
-    <div class="flex flex-col gap-24 mx-auto w-3/6 shadow-lg rounded-lg py-12 px-28" >
-      <h4 class="text-center" >MENU</h4>
+    <div class="flex flex-col gap-24 mx-auto w-5/6 md:w-3/6 shadow-lg rounded-lg py-12 px-4 md:px-28" >
+      <h3 class="text-center" >MENU</h3>
       <p class="text-center" >Wilt u het menu liever zelf samenstellen, bekijk dan de mogelijkheden op de A la Carte kaart. U kunt het menu aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van {{resturant.name}}</p>
       <div><img class="mx-auto" :src="resturant.menu2.image" :alt="resturant.name"></div>
       <div class="text-center" >
