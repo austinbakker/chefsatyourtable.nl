@@ -1,8 +1,8 @@
 <template>
 <div class="relative " >
-  <!-- <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
+  <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
     <ContactForm @click="showContactForm=false" :partners='partners' />
-  </div> -->
+  </div>
   <!-- START - NAVBAR  -->
     <!-- <div class="absolute top-0 w-screen" >
       <Navbar :socials='socials' />
@@ -31,23 +31,23 @@
 <HoeWerktHet />
 
 <!-- NOTE responsive -->
-<!-- <ExtraMogelijkhedenLocatie /> -->
+<ExtraMogelijkhedenLocatie />
 
 <!-- NOTE responsive -->
-<!-- <Benefits /> -->
+<Benefits />
 
 <!-- NOTE responsive -->
-<!-- <Menus /> -->
+<Menus />
 
 
 <!-- NOTE responsive -->
-<!-- <Contact @click="showContactForm=true" /> -->
+<Contact @click="showContactForm=true" />
 
 <!-- NOTE responsive -->
-<!-- <Impressies /> -->
+<Impressies />
 
 <!-- NOTE responsive -->
-<!-- <Footer :socials='socials' />  -->
+<Footer :socials='socials' /> 
 
   
 </div>

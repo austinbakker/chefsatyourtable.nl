@@ -13,6 +13,7 @@
   "dependencies": {
     "@nuxtjs/composition-api": "^0.16.4",
     "fs": "0.0.1-security",
+    "gsap": "^3.5.1",
     "luxon": "^1.25.0",
     "moment": "^2.29.1",
     "nuxt": "^2.14.7"

@@ -1,46 +1,49 @@
 <template>
-  <div class="container" >
-    <h2 class="text-center" >HOE WERKT HET</h2>
-    
-    <div v-for="(item,index) in items" :key="index"
-    v-show="selected==index"
-      class="grid gap-4 relative" style="grid-template-columns: 1fr 1fr">
-        <!-- IMG -->
-        <div class="absolute h-full w-64 " style="left:-15vw;" >
-          <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
-        </div>
-        <!-- SELECTOR -->
-        <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
-          <li class="flex items-center relative " v-for="(item,indexItem) in items"
-            :key="indexItem"
-            @click="selected=indexItem">
 
-            <div v-if="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
-              <div class="w-0.5 bg-gold h-full mx-auto rounded-full" ></div>
-            </div>
-            <div :class="[selected==indexItem ? 'bg-green' : 'bg-white' ,' z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
-            <div :class="[selected==indexItem ? 'font-bold' : '', 'ml-6 transition-all']" >{{item.name}}</div>
-          </li>
-        </ul>
-        <!-- CONTENT -->
-        <div class="flex flex-col justify-center" >
-          <p v-for="(content,indexContent) in item.content" :key="indexContent" >
-            {{content}}
-            <br>
-            <br>
-          </p>
-        </div>
-    </div>
+<div id="hoewerkthet-1234" class="" >
+<h2 class="text-center" >HOE WERKT HET <div>{{progress}}</div> </h2>
+          
+<div class="grid grid-cols-3 gap-4 relative container" style="grid-template-columns: 10% 1fr 40%" > 
+
+  <!-- IMAGES -->
+  <div v-for="(item,index) in items" :key="index" v-show="progress < (index+1)*33 && progress >index*33" class="absolute h-full w-64 " style="left:-15vw;" >
+    <img class="absolute -left-1/4 h-64 object-cover" :src="item.image" alt="image of food">
   </div>
+  <div></div>
+  <!-- SELECTOR -->
+  <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
+    <li class="flex items-center relative " v-for="(item,indexItem) in items"
+      :key="indexItem"
+      @click="selected=indexItem">
+
+      <div v-if="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
+        <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
+      </div>
+      <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
+      <div :class="[progress>indexItem*33 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
+    </li>
+  </ul> 
+
+  <!-- CONTENT -->
+  <div v-show="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center" v-for="(item,index) in items" :key="index" >
+    <p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p>
+  </div>
+
+</div>
+</div>
 </template>
 
 
 <script lang='ts' >
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
+import { gsap } from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default defineComponent({
  props: [],
  components: {},
+
  setup() {
+
    const items = [
      {
        name: 'Voorafgaand',
@@ -66,19 +69,33 @@ export default defineComponent({
      }
    ]
     const list = ref(null)
+    const progress=ref(0)
     const distanceBetween = ref('0px')
     onMounted(() => {
-      const liList = list.value[0].getElementsByTagName('li')
+      const liList = list.value.getElementsByTagName('li')
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
+
+      gsap.registerPlugin(ScrollTrigger);
+      console.log('gasp',gsap)
+      ScrollTrigger.create({
+        trigger: '#hoewerkthet-1234',
+        markers: true,
+        scrub:5,
+        pin:true,
+        onUpdate: (self) => progress.value=Number(self.progress.toFixed(3))*100,
+        start: "center center",
+        end: '1000px'
+      })
     })
    const selected = ref(0)
    return {
      selected,
      items,
      distanceBetween,
-     list
+     list,
+     progress
    }
- }
+ },
 })
 
 
