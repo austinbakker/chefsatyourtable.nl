@@ -18,7 +18,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 export default {
  props: [],
  components: {},

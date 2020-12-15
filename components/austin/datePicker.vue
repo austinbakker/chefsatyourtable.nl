@@ -54,7 +54,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 import { defineComponent, PropType, reactive, computed, ref, onMounted, watchEffect, watch } from "@nuxtjs/composition-api";
 const { DateTime } = require("luxon");
 export default defineComponent({

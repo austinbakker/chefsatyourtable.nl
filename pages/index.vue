@@ -71,7 +71,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 import { defineComponent, ref } from "@nuxtjs/composition-api";
 import Navbar from "./../components/navbar.vue";
 import Hero from "./../components/hero.vue";

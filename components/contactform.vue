@@ -120,7 +120,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 import { defineComponent, ref, reactive, watchEffect } from "@nuxtjs/composition-api";
 import moment from 'moment'
 import DatePicker from "./austin/datePicker.vue";

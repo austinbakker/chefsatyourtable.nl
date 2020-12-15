@@ -62,7 +62,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 import { defineComponent, ref, watch } from "@nuxtjs/composition-api";
 export default defineComponent({
  props: ['socials'],
