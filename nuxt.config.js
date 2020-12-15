@@ -3,8 +3,12 @@ export default {
   target: 'static',
   buildModules: [
     '@nuxtjs/composition-api',
+    '@aceforth/nuxt-optimized-images',
     '@nuxtjs/tailwindcss'
   ],
+  optimizedImages: {
+    optimizeImages: true
+  },
   head: {
     titleTemplate: '%s - Nuxt.js',
     meta: [

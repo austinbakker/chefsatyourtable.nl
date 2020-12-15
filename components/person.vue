@@ -1,9 +1,10 @@
 <template>
   <div class="grid grid-cols-1 lg:grid-cols-2 py-64 items-center container" >
     <!-- MOBIEL -->
-    <div class="grid grid-cols-2 lg:hidden py-12" >
-      <h3 class="" >Max Deenik</h3>
-      <img class=" object-cover h-48 w-48 rounded-full"  src="~/assets/images/person/1.png" alt="Max Deenik">
+    <div class="grid md:grid-cols-2 lg:hidden py-12" >
+      <h3 class="text-center md:text-left" >Max Deenik</h3>
+      <div class="text-center" ><img class="mx-auto object-cover h-48 w-48 rounded-full"  src="~/assets/images/person/1.png" alt="Max Deenik"></div>
+      
     </div>
     <!-- DESKTOP -->
     <div class="hidden lg:block relative h-full w-full  " >

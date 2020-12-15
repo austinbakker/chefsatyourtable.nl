@@ -48,7 +48,7 @@ export default {
      },
      {
        name: "Linnen",
-       image: require('~/assets/images/benefits/5.png')
+       image: require('~/assets/images/benefits/5.png?resize&size=300')
      }
    ]
    return{

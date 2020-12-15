@@ -15,42 +15,54 @@
   <!-- END HERO -->
 
   <!-- OVER ONS -->
-    <Overons />
+  <div class="my-12" ><Overons /></div>
+    
   <!-- END OVER ONS -->
 
-  <!-- MAX -->
-    <Person />
-  <!-- END MAX -->
+<!-- NOTE responsive -->
+<div class="my-12" ><Person /></div>
+    
 
-  <!-- PARTNERS -->
-    <Partners :partners='partners'/>
-    <!-- <div>
-      <img class="h-full md:h-auto object-cover md:object-contain" src="~/assets/images/food.png" alt="food">
-    </div> -->
-  <!-- END PARTNERS -->
+<!-- NOTE responsive -->
+<div class="my-12" ><Partners :partners='partners'/></div>
+    
+<!-- TODO fix image being absolute -->
+<!-- <div>
+<img class="h-full md:h-auto object-cover md:object-contain" src="~/assets/images/food.png" alt="food">
+</div> -->
+<!-- END PARTNERS -->
 
 
 <!-- NOTE responsive -->
-<HoeWerktHet />
-
-<!-- NOTE responsive -->
-<ExtraMogelijkhedenLocatie />
-
-<!-- NOTE responsive -->
-<Benefits />
-
-<!-- NOTE responsive -->
-<Menus />
+<div class="my-8" ><HoeWerktHet /></div>
 
 
 <!-- NOTE responsive -->
-<Contact @click="showContactForm=true" />
+<div class="my-8" ><ExtraMogelijkhedenLocatie /></div>
+
 
 <!-- NOTE responsive -->
-<Impressies />
+<div class="my-8" ><Benefits /></div>
+
 
 <!-- NOTE responsive -->
-<Footer :socials='socials' /> 
+<div class="my-8"><Menus /></div>
+
+
+
+<!-- NOTE responsive -->
+<div class="my-8" ><Contact @click="showContactForm=true" /></div>
+
+
+<!-- NOTE responsive -->
+<div class="my-24" >
+  <Impressies />
+</div>
+
+<!-- NOTE responsive -->
+<div class="my-24" >
+  <Footer :socials='socials' /> 
+</div>
 
   
 </div>
@@ -124,6 +136,9 @@ export default defineComponent({
 .container{
   width:80%;
   @apply mx-auto;
+}
+html {
+  scroll-behavior: smooth;
 }
 //POWERED BY AUSTIN
 </style>
