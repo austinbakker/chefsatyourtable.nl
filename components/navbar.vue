@@ -39,18 +39,18 @@
     <!-- START - mobiel menu  -->
     <div class="absolute bg-green w-screen" >
       <transition name="fade">
-        <div v-if="menu" class=" min-h-screen h-screen container flex flex-col text-center gap-5" >
+        <div v-if="menu" class=" min-h-screen h-screen container flex flex-col text-center text-white" >
           <div class="h-32"></div> <!-- NAVBAR SPACER -->
-          <a class="transition-all transform scale-100 hover:scale-125" href="#overons">OVER ONS</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="#partner">PARTNERS</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="#Menus">MENU</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
-          <a class="transition-all transform scale-100 hover:scale-125" href="Impressies">IMPRESSIES</a>
-          <div class="flex justify-evenly" >
-            <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
-            <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
-            <a href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125 " href="#overons">OVER ONS</a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#partner">PARTNERS</a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#Menus">MENU</a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="Impressies">IMPRESSIES</a>
+          <div class="flex justify-evenly mt-12" >
+            <a @click="menu=!menu" href="https://www.instagram.com/chefsatyourtable/"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
+            <a @click="menu=!menu" href="https://www.facebook.com/ChefsatyourTable"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
+            <a @click="menu=!menu" href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a>
           </div>
         </div>
       </transition>
