@@ -6,10 +6,10 @@
 
 
     <div class=" h-full top-0 w-full " >
-      <div class="text-center text-white flex flex-col gap-4 z-20 relative " >
+      <div class="text-center text-white grid grid-cols-1 gap-4 z-20 relative " >
         <div class="text-center mt-5" ><img class="mx-auto w-32 h-32 object-contain" src="~/assets/images/logo.png" alt="logo"></div>
-        <ul class="flex h-8 justify-center gap-8" >
-          <a class="inline-block h-full" v-for="(social,index) in socials" :key="index"
+        <ul class="flex h-8 justify-center " >
+          <a class="inline-block h-full mx-4" v-for="(social,index) in socials" :key="index"
            :href="social.url">
            <img class="inline h-full " :src="social.image" :alt="social.name"></a>
         </ul>

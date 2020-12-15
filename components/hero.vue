@@ -14,10 +14,10 @@
     
     <!-- START - SLIDER  -->
     <div class="absolute z-10 bottom-16 w-screen flex place-items-center " >
-      <ul class=" bg-green inline-flex mx-auto rounded-full justify-center place-items-center gap-10 py-2 px-6" >
+      <ul class=" bg-green inline-flex mx-auto rounded-full justify-center place-items-center 0 py-2 px-6" >
         <li
           v-for="(image,index) in images.length" :key="index"
-          :class="[selected==index ? 'opacity-100' : 'opacity-25', 'transition-all w-24 h-2 bg-gold rounded-full ']"
+          :class="[selected==index ? 'opacity-100' : 'opacity-25', 'mx-4 transition-all w-24 h-2 bg-gold rounded-full ']"
           @click="selected=index" ></li>
       </ul>
     </div>

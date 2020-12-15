@@ -3,10 +3,10 @@
 <!-- <div class="flex flex-col lg:flex-row  relative" > -->
   <div class="flex flex-col">
   <div class="h-32" ></div>
-  <div class="flex flex-col gap-12" >
+  <div class="flex flex-col " >
     <h2 class="text-center md:text-left" >WAT ZIT ERBIJ INBEGREPEN?</h2>
-    <ul class="flex flex-wrap items-center gap-16 justify-center md:justify-start" >
-      <li v-for="(item,index) in items" :key="index" >
+    <ul class="my-12 flex flex-wrap items-center justify-center md:justify-start" >
+      <li v-for="(item,index) in items" :key="index" class="mx-6" >
         <img class="mx-auto h-16 w-16 object-contain" :src="item.image" :alt="item.name">
         <div class="mt-4 text-center" >{{item.name}}</div>
       </li>

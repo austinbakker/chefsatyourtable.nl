@@ -49,14 +49,14 @@
 
 
 <!-- NOTE responsive -->
-<div class="my-8" id="contact" ><Contact @click="showContactForm=true" /></div>
+<div class="my-48" id="contact" ><Contact @click="showContactForm=true" /></div>
 
 
 <!-- NOTE responsive -->
 <div class="my-24" id="Impressies" ><Impressies /></div>
 
 <!-- NOTE responsive -->
-<div class="my-24" id="footer" ><Footer :socials='socials' /> </div>
+<div class="mt-24" id="footer" ><Footer :socials='socials' /> </div>
 
   
 </div>

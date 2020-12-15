@@ -12,7 +12,7 @@
       <br>
       <p>Er wordt zo spoedig mogelijk contact met u opgenomen</p>
     </div>
-    <div><a href="/"><button class="shadow-0 rounded-lg hover:border-green border-2 border-white px-4 md:px-20 py-3 transition transform hover:scale-110" > <h4>TERUG NAAR HOMEPAGINA</h4> </button></a></div>
+    <div><a href="/"><button class="shadow-lg rounded-lg hover:border-green border-2 border-white px-4 md:px-20 py-3 transition transform hover:scale-110" > <h4>TERUG NAAR HOMEPAGINA</h4> </button></a></div>
   </div>
   <div><img src="~/assets/images/rounded.svg" alt="border rounded"></div>
 </div>
