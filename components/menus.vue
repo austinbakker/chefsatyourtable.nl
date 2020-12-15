@@ -2,7 +2,7 @@
 <div>
 <!-- MENU SELECTOR -->
 <ul>
-  <li class="flex flex-col gap-24" v-for="(resturant,index) in resturants" :key="index" >
+  <li :id="`${resturant.name}`" class="flex flex-col gap-24" v-for="(resturant,index) in resturants" :key="index" >
     <!-- LOGO -->
     <!-- <div><nuxt-image fit='contain' class="mx-auto w-48 h-48 md:w-96 md:h-96 object-contain" width='500' height='200' :src="resturant.image" :alt="resturant.name" /></div> -->
     <div class="mx-auto w-48 h-48 md:w-96 md:h-96 " ><nuxt-image fit="outside" class="my-auto"  :src="resturant.image" :alt="resturant.name" /></div>

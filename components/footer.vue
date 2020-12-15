@@ -1,6 +1,6 @@
 <template>
  <div>
-   <h2>FOOTER</h2>
+
    <div class="relative" >
     <div class="bg-green h-12" ></div>
 

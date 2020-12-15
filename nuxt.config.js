@@ -3,11 +3,11 @@ export default {
   target: 'static',
   buildModules: [
     '@nuxtjs/composition-api',
-    '@nuxtjs/tailwindcss',
-    '@nuxt/image'
+    '@aceforth/nuxt-optimized-images',
+    '@nuxtjs/tailwindcss'
   ],
-  image: {
-    // Options
+  optimizedImages: {
+    optimizeImages: true
   },
   head: {
     titleTemplate: 'Chefs At Your Table',

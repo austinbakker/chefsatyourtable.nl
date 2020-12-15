@@ -52,7 +52,7 @@ export default {
      },
      {
        name: "Linnen",
-       image: 'images/benefits/5.png'
+       image: require('~/assets/images/benefits/5.png?resize&size=300')
      }
    ]
    return{
