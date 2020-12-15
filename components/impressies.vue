@@ -4,7 +4,7 @@
    <ul class="grid md:grid-cols-2 gap-20 relative" >
      <li v-for="(image,index) in images" :key="index">
        <img :src="image" alt=""
-        class="relative duration-500 ease-in-out transition-all z-0 hover:z-20 hover:scale-150 transform"
+        class="relative duration-500 ease-in-out transition-all z-0 hover:z-20 hover:scale-110 transform"
        >
      </li>
    </ul>
