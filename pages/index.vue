@@ -31,10 +31,10 @@
 <!-- NOTE responsive -->
 <div class="my-12" id="partner" ><Partners :partners='partners'/></div>
     
-<!-- TODO fix image being absolute -->
-<!-- <div>
-<img class="h-full md:h-auto object-cover md:object-contain" src="~/assets/images/food.png" alt="food">
-</div> -->
+<!-- NOTE responsive -->
+<div class="h-96 " >
+  <img class=" h-full object-cover md:object-contain" src="~/assets/images/food.png" alt="food">
+</div>
 <!-- END PARTNERS -->
 
 

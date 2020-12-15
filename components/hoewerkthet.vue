@@ -1,6 +1,6 @@
 <template>
 
-<div id="hoewerkthet-1234" class="h-screen flex flex-col justify-around md:justify-evenly" >
+<div id="hoewerkthet-1234" class="h-screen flex flex-col justify-around md:justify-evenly bg-white" >
 <h2 class="text-center" >HOE WERKT HET 
 </h2>
           
@@ -87,10 +87,10 @@ export default defineComponent({
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
 
       gsap.registerPlugin(ScrollTrigger);
-      console.log('gasp',gsap)
+      // console.log('gasp',gsap)
       ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        markers: false,
+        markers: true,
         scrub:1,
         pin:true,
         snap: 1/2.97,
