@@ -14,10 +14,8 @@
     <Hero />
   <!-- END HERO -->
 
-  <!-- OVER ONS -->
-  <div class="my-12" ><Overons /></div>
-    
-  <!-- END OVER ONS -->
+<div class="my-12" ><Overons /></div>
+
 
 <!-- NOTE responsive -->
 <div class="my-12" ><Person /></div>

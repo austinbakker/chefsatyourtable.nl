@@ -1,10 +1,15 @@
 <template>
-<div class="h-screen flex bg-white" style="" >
+<div class="h-screen flex bg-white" style=""  >
   <div class="flex  w-full" style="" >
 
-    <form name='contact' method='POST' data-netlify='true'
+    <form name='contact'
+      method='POST'
+      data-netlify="true"
+      data-netlify-honeypot="bot-field"
+      action='bedankt'
       class="w-full flex flex-col j">
-      <input type='hidden' name='form-name' value='contact'>
+      <input name="bot-field" style="display:none;" />
+      <input type="hidden" name="form-name" value="contact" />
 
 <!-- START - overvioew  -->
 <div class="h-72 flex" >
