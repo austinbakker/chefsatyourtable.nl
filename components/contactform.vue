@@ -64,7 +64,7 @@
 <div v-show="stage==2" class="flex  items-center container gap-40" >
   <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
   <div class="flex-1 flex flex-col text-center" >
-    <input class="hidden" type="text" v-model="date" >
+    <input class="hidden" type="text" :value="date" name="datum" >
     <h3 class="text-center" >Selecteer een datum en tijdstip</h3>
     <DatePicker @input="setDate" />
     <!-- <div class="md:hidden flex justify-between my-2" >
