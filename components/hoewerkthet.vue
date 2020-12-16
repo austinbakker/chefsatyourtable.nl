@@ -48,6 +48,7 @@
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default defineComponent({
@@ -95,7 +96,7 @@ export default defineComponent({
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
 
       // NOTE gives error
-      gsap.registerPlugin(ScrollTrigger);
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
       // console.log('gasp',gsap)
       ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',

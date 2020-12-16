@@ -15,7 +15,7 @@
     <!-- CTA -->
     <!-- START - SLIDER  -->
     <div class="absolute z-10 bottom-16 w-screen flex flex-col place-items-center " >
-    <div class="mb-12" ><button class="bg-white border-green border-2 md:h-12 md:w-96 px-6 py-2 rounded-lg shadow-xl hover:bg-green hover:text-white font-bold"  @click="$emit('click')">Aanvragen</button></div>
+    <div class="mb-12" ><a href="/contact"><button class="bg-white border-green border-2 md:h-12 md:w-96 px-6 py-2 rounded-lg shadow-xl hover:bg-green hover:text-white font-bold" >Aanvragen</button></a></div>
       <ul class=" bg-green inline-flex mx-auto rounded-full justify-center place-items-center 0 py-2 px-6" >
         <li
           v-for="(image,index) in images.length" :key="index"

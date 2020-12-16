@@ -1,18 +1,18 @@
 <template>
 <div class="relative overflow-x-hidden" >
 
-<div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
-  <ContactForm @click="showContactForm=false" :partners='partners' />
-</div>
-  <!-- <ContactForm :partners='partners'/> -->
+<!-- <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" > -->
+  <!-- <Lead @click="showContactForm=false" :partners='partners' /> -->
+<!-- </div> -->
+  <!-- <Lead /> -->
 
 <div class="absolute top-0 w-screen" >
   <Navbar :socials='socials' />
 </div> 
 
 <!-- NOTE responsive -->
-<Hero @click="showContactForm=true"/>
-
+<Hero />
+<!-- <Lead /> -->
 <div class="my-12" id="overons" ><Overons /></div>
 
 <!-- TODO SETUP FORM -->
@@ -85,20 +85,22 @@ import Menus from "./../components/menus.vue";
 import Contact from "./../components/contact.vue";
 import Impressies from "./../components/impressies.vue";
 import Footer from "./../components/footer.vue";
-import ContactForm from "./../components/contactform.vue";
+// import Lead from "./../components/lead.vue";
+// import Lead from "./../components/contactform.vue";
 export default defineComponent({
  props: [],
  components: {
-   ContactForm,
    Footer,
-   Navbar, Hero, Overons, Person, Partners, HoeWerktHet,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
+   HoeWerktHet,
+  //  Lead,
+   Navbar, Hero, Overons, Person, Partners,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
     const showContactForm = ref(false)
     const partners = [
      {name: 'Visaandeschelde', img: require('~/assets/images/partners/1.png')},
      {name: 'The Traveller', img: require('~/assets/images/partners/3.png')},
      {name: 'The Roast Room', img: require('~/assets/images/partners/2.png')}
-   ]
+    ]
 
    const socials = [
      {

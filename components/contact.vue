@@ -8,7 +8,7 @@
         <li class="scale-100 hover:font-bold hover:text-white hover:scale-125 transform transition-all" ><a href="tel:+31852007546">T: +31 (0)85 200 75 46</a></li>
       </ul>
       <div class="text-center" >
-        <button @click="$emit('click')" class="bg-gold border-2 border-green rounded-lg px-16 py-2 hover:bg-green hover:text-gold transition-all transform hover:scale-110  " > <h4 style="color:inherit" >Aanvragen</h4> </button>
+        <a href="/contact"><button  class="bg-gold border-2 border-green rounded-lg px-16 py-2 hover:bg-green hover:text-gold transition-all transform hover:scale-110  " > <h4 style="color:inherit" >Aanvragen</h4> </button></a>
       </div>
     </div>
     <div class=" items-center hidden lg:flex " >

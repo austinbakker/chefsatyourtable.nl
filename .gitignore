@@ -3,7 +3,7 @@ node_modules
 .DS_Store
 .dist/
 .dist
-dist
+dist/
 
 # Local Netlify folder
 .netlify
