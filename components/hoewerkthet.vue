@@ -4,7 +4,7 @@
 <h2 class="text-center" >HOE WERKT HET 
 </h2>
           
-<div class="grid  gap-4 relative container custom-grid h-96" style=""  > 
+<div id="scrollContainer" class="grid gap-4 relative container custom-grid h-96" style=""  > 
 
   <!-- IMAGES -->
   <div class="relative" >
@@ -20,7 +20,7 @@
 
   <!-- SELECTOR -->
   <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
-    <li class="flex items-center relative " v-for="(item,indexItem) in items"
+    <li class="flex items-center relative " v-for="(item,indexItem) in items" 
       :key="indexItem">
 
       <div v-show="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
@@ -90,50 +90,25 @@ export default defineComponent({
     const list = ref(null)
     const progress=ref(0)
     const distanceBetween = ref('0px')
-      // const liList = list.value.getElementsByTagName('li')
-      // distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
 
-      // // NOTE gives error
-      // gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-      // // console.log('gasp',gsap)
-      // ScrollTrigger.create({
-      //   trigger: '#hoewerkthet-1234',
-      //   markers: true,
-      //   scrub:1,
-      //   pin:true,
-      //   snap: 1/2.97,
-      //   onUpdate: (self) => {
-      //     let progressCheck = Number(self.progress.toFixed(3))*100;
-      //     console.log(progressCheck)
-      //     if(!progressCheck) {
-      //       progress.value=1;
-      //     } else if(progressCheck>99) {progress.value=90}
-      //     else{progress.value=progressCheck}
-      //   },
-      //   // start: "center center",
-      //   end: '500px'
-      // })
-      // const container = ref(null)
-      // const goTo = (index) => {
-        // console.log(container.value);
-        // console.log(gsap.to(container.value, {scrollTo: 100})); 
-      // }
+
     onMounted(() => {
       const liList = list.value.getElementsByTagName('li')
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
-
-      // NOTE gives error
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
-      // console.log('gasp',gsap)
-      ScrollTrigger.create({
+
+      
+      let st  =ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
+        scrolller: '#scrollContainer',
         markers: false,
         scrub:1,
         pin:true,
-        snap: 1/2.97,
+        snap: 1/3.33,
         onUpdate: (self) => {
           let progressCheck = Number(self.progress.toFixed(3))*100;
-          console.log(progressCheck)
+
+
           if(!progressCheck) {
             progress.value=1;
           } else if(progressCheck>99) {progress.value=90}
@@ -143,6 +118,16 @@ export default defineComponent({
         // start: 'top top',
         end: '425px'
       })
+      setInterval(() =>{
+
+        console.log(st.scroll())
+        // st.scroll(4120)
+      },5000)
+      // const goTo = () => {
+      //   console.log('going to')
+      //   st.scroll(100)
+      // }
+      
     })
    const selected = ref(0)
    return {
@@ -151,7 +136,8 @@ export default defineComponent({
      distanceBetween,
      list,
      progress,
-    //  container
+    //  container,
+    //  goTo
    }
  },
 })
