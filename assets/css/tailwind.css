@@ -33,20 +33,24 @@ html,body {
 h1,h2,h3,h4,h5,h6{
   font-family: GlacialIndifferenceBold;
 }
+h1{
+  @apply text-6xl;
+}
 h2{
-  /* font-size: 70px; */
-  font-size: clamp(18px, 10vw, 70px); 
+  /* font-size: clamp(18px, 10vw, 70px); */
+   @apply text-5xl;
 }
 h3{
-  font-size: clamp(14px, 10vw, 48px); 
-  /* font-size: 48px; */
+  @apply text-2xl;
+  /* font-size: clamp(14px, 10vw, 48px);  */
 }
 h4{
-  font-size: clamp(12px, 2vw, 32px);;
+  @apply text-xl;
+  /* font-size: clamp(12px, 2vw, 32px);; */
 }
 h5{
-  font-size: clamp(10px, 2.2vw, 24px);;
-  /* font-size: 24px; */
+  @apply text-2xl;
+  /* font-size: clamp(10px, 2.2vw, 24px);; */
 }
 h6{
   font-size: clamp(10px, 1vw, 24px);;
@@ -54,11 +58,12 @@ h6{
 i{
   font-family: CormorantGaramondLightItalic;
   font-size: clamp(0.8rem, 1vw, 1.5rem);
+  @apply text-base;
 }
 p{
   font-family: CormorantGaramondLight;
-  /* font-size: 28px; */
-  font-size: clamp(1rem, 1.2vw, 2rem);
+  /* font-size: clamp(1rem, 1.2vw, 2rem); */
+  @apply text-base;
 }
 *, *::before, *::after{
   box-sizing: border-box;

@@ -149,9 +149,7 @@ export default defineComponent({
     watch( selectedDate, () => {
         const start = (selectedDate.value.startOf('days') < DateTime.local()) ? baseDate  : selectedDate.value.startOf('days').set({hours:7,minutes:0})
         const end = selectedDate.value.endOf('days')
-        console.log('starttime', start.hour)
         const Nhours = (Math.round(end.diff(start, ['hours']).toObject().hours))*2
-        console.log('diff', Nhours)
         const tijdList=[]
         for (let index = 0; index < Nhours; index++) {
           tijdList.push(start.plus({minutes:30*index}))

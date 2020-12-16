@@ -12,8 +12,11 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@babel/runtime-corejs3": "^7.12.5",
+    "@nuxt/babel-preset-app": "^2.14.12",
     "@nuxtjs/composition-api": "^0.16.4",
     "@nuxtjs/gtm": "^2.4.0",
+    "core-js": "^3.8.1",
     "fs": "0.0.1-security",
     "gsap": "^3.5.1",
     "luxon": "^1.25.0",

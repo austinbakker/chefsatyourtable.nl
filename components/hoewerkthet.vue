@@ -1,10 +1,11 @@
 <template>
 
-<div id="hoewerkthet-1234" class="h-screen flex flex-col justify-around md:justify-evenly bg-white" >
+<div id="hoewerkthet-1234" class="flex flex-col justify-around md:justify-evenly bg-white" style="height:80vh" >
 <h2 class="text-center" >HOE WERKT HET 
 </h2>
           
-<div id="scrollContainer" class="grid gap-4 relative container custom-grid h-96" style=""  > 
+<!-- <div id="scrollContainer" class="grid gap-4 relative container custom-grid h-96" style=""  >  -->
+<div id="scrollContainer" class="grid gap-4 relative container custom-grid py-12"   > 
 
   <!-- IMAGES -->
   <div class="relative" >
@@ -34,7 +35,7 @@
   <!-- CONTENT -->
   <transition name='fade' mode="out-in" >
     <template v-for="(item,index) in items"   >
-      <div :key='index' v-if="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
+      <div :key='index' v-if="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center overflow-y-scroll" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
     </template>
   </transition>
 
@@ -100,7 +101,7 @@ export default defineComponent({
       
       let st  =ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        scrolller: '#scrollContainer',
+        // scrolller: '#scrollContainer',
         markers: false,
         scrub:1,
         pin:true,
@@ -164,7 +165,7 @@ export default defineComponent({
     grid-template-rows: 1fr;
   }
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 1fr 40%;
+  grid-template-rows: 10% 30% 60%
 }
 .custom-image-responsive{
     @media (min-width: 768px) {
