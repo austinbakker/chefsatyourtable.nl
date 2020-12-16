@@ -26,7 +26,7 @@
 </form> -->
 
 <!-- NOTE responsive -->
-<div class="my-12" id="person" ><Person /></div>
+<div class="my-12" id="person" ><Person @click="showContactForm=true" /></div>
     
 
 <!-- NOTE responsive -->
@@ -116,7 +116,7 @@ export default defineComponent({
      {
        name: 'Linkedin',
        image: require('~/assets/images/socials/linkedin.svg'),
-       url: 'https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl'
+       url: 'https://www.linkedin.com/company/chefs-at-your-table/'
      },
    ]
 

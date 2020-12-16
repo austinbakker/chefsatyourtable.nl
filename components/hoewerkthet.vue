@@ -91,8 +91,7 @@ export default defineComponent({
     const list = ref(null)
     const progress=ref(0)
     const distanceBetween = ref('0px')
-    onMounted(() => {
-      const liList = list.value.getElementsByTagName('li')
+          const liList = list.value.getElementsByTagName('li')
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
 
       // NOTE gives error
@@ -100,7 +99,7 @@ export default defineComponent({
       // console.log('gasp',gsap)
       ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        markers: false,
+        markers: true,
         scrub:1,
         pin:true,
         snap: 1/2.97,
@@ -113,8 +112,32 @@ export default defineComponent({
           else{progress.value=progressCheck}
         },
         // start: "center center",
-        end: '1300px'
+        end: '500px'
       })
+    onMounted(() => {
+      // const liList = list.value.getElementsByTagName('li')
+      // distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
+
+      // // NOTE gives error
+      // gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
+      // // console.log('gasp',gsap)
+      // ScrollTrigger.create({
+      //   trigger: '#hoewerkthet-1234',
+      //   markers: true,
+      //   scrub:1,
+      //   pin:true,
+      //   snap: 1/2.97,
+      //   onUpdate: (self) => {
+      //     let progressCheck = Number(self.progress.toFixed(3))*100;
+      //     console.log(progressCheck)
+      //     if(!progressCheck) {
+      //       progress.value=1;
+      //     } else if(progressCheck>99) {progress.value=90}
+      //     else{progress.value=progressCheck}
+      //   },
+      //   // start: "center center",
+      //   end: '500px'
+      // })
     })
    const selected = ref(0)
    return {
