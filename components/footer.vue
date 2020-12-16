@@ -7,7 +7,7 @@
 
     <div class=" h-full top-0 w-full " >
       <div class="text-center text-white grid grid-cols-1 gap-4 z-20 relative " >
-        <div class="text-center mt-5" ><img class="mx-auto w-32 h-32 object-contain" src="~/assets/images/logo.png" alt="logo"></div>
+        <div class="text-center mt-5" ><img class="mx-auto w-32 h-32 md:h-64 md:w-64 object-contain" src="~/assets/images/logo-sm.png" alt="logo"></div>
         <ul class="flex h-8 justify-center " >
           <a class="inline-block h-full mx-4" v-for="(social,index) in socials" :key="index"
            :href="social.url">
@@ -18,7 +18,9 @@
           <a class="text-gold hover:text-white transition-all" href="/voorwaarden.pdf" target="_blank" rel="noopener noreferrer">Algemene Voorwaarden</a>
           |
           <a class="text-gold hover:text-white transition-all" href="/cookies.pdf" target="_blank" rel="noopener noreferrer">Cookies</a>
-          |
+        </ul>
+        <ul class="flex flex-wrap max-w-md mx-auto gap-1 justify-center" >
+
           <a class="text-gold hover:text-white transition-all" href="https://rotisserie.theroastroom.nl/" target="_blank" rel="noopener noreferrer">The Roast Room</a>
           |
           <a class="text-gold hover:text-white transition-all" href="https://visaandeschelde.nl/" target="_blank" rel="noopener noreferrer">Visaandeschelde</a>
