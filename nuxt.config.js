@@ -1,14 +1,25 @@
 export default {
-  ssr: false,
   target: 'static',
+  vue: {
+    config: {
+      productionTip: true,
+      devtools: true
+    }
+  },
   htmlAttrs: {
     lang: 'nl'
   },
+  modules: [
+    '@nuxtjs/gtm',
+  ],
   buildModules: [
     '@nuxtjs/composition-api',
     '@aceforth/nuxt-optimized-images',
     '@nuxtjs/tailwindcss'
   ],
+  gtm: {
+    id: 'GTM-PLSDV9Z'
+  },
   optimizedImages: {
     optimizeImages: true
   },
@@ -20,6 +31,9 @@ export default {
 
       // hid is used as unique identifier. Do not use `vmid` for it as it will not work
       { hid: 'description', name: 'description', content: 'Max zorgt als kok-aan-huis voor een gastronomische culinaire ervaring. In de vertrouwde omgeving van uw eigen woning. Geniet van een geweldige diner van uw favoriete restaurant.' }
+    ],
+    link: [
+      { rel: 'icon', type: 'image/x-icon', href: '/logo.png' }
     ]
   }
 }

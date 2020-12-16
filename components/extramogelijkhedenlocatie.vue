@@ -15,7 +15,7 @@
     </div>
     <div class="max-w-2xl md:ml-10 w-full md:w-full text-center md:text-left" >
       <h3>Op locatie</h3>
-      <p>Voor een aanvraag voor grotere gezelschappen, voor speciale gelegenheden of op bijzondere plekken kan het handig zijn wanneer wij van tevoren samen met u een bezoek brengen aan de locatie. Op deze manier kunnen wij uw wensen bespreken en de keuken in kaart te brengen. </p>
+      <p>Voor een aanvraag voor grotere gezelschappen, voor speciale gelegenheden of op bijzondere plekken kan het handig zijn wanneer wij van tevoren samen met u een bezoek brengen aan de locatie. Op deze manier kunnen wij uw wensen bespreken en daarmee de keuken in kaart brengen. </p>
     </div>
   </div>
 
@@ -23,7 +23,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 export default {
  props: [],
  components: {},

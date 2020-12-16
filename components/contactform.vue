@@ -3,13 +3,13 @@
   <div class="flex  w-full" style="" >
 
     <form name="contact"
-      method="POST" data-netlify="true" netlify-honeypot="bot-field"
-      action='/bedankt/'
-      class="w-full flex flex-col ">
-     
-       <p class="hidden">
+      method="post" data-netlify="true"
+      action='/bedankt'
+      class="w-full h-screen flex flex-col ">
+      <input type="hidden" name="form-name" value="contact" />
+       <!-- <p class="hidden">
           <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
-        </p>
+        </p> -->
 
 <!-- START - overvioew  -->
 <div class="h-72 flex flex-col md:flex-row" >
@@ -50,6 +50,10 @@
       <h2 class="text-center" >{{personen}}</h2>
       <input name="personen" type="range" min="2" max="50" v-model='personen' class="slider" id="myRange">
     </div>
+    <!-- <div class="md:hidden flex justify-between my-12" >
+      <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+      <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+    </div> -->
   </div>
   <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
@@ -62,6 +66,10 @@
   <div class="flex-1 flex flex-col text-center" >
     <h3 class="text-center" >Selecteer een datum en tijdstip</h3>
     <DatePicker />
+    <!-- <div class="md:hidden flex justify-between my-2" >
+      <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+      <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+    </div> -->
   </div>
   <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
@@ -69,9 +77,9 @@
 
 
 <!-- START - STAGE 4  -->
-  <div v-show="stage==3" class="flex items-center container gap-40 " >
+  <div v-show="stage==3" class="flex items-start md:items-center container gap-40 " >
     <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-    <div class="flex flex-col gap-10 w-full max-w-1xl mx-auto overflow-y-show h-3/4 shadow-2xl px-8 py-8 rounded-lg" style="" >
+    <div class="grid grid-cols-1 overflow-y-scroll gap-10 w-full max-w-1xl mx-auto overflow-y-show h-3/4 shadow-2xl px-8 py-8 rounded-lg" style="" >
 
     <div class="w-full" >
       <h5>NAAM</h5>
@@ -97,7 +105,8 @@
       <h6 class="font-bold">Wensen & Notities</h6>
       <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea>
     </div>
-    <button class="shadow-lg py-1 px-3 hover:border-green border-2 border-white rounded-lg"  type='submit'> <h4>VERSTUUR</h4> </button>
+    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg"  type='submit'> <h4>VERSTUUR</h4> </button>
+    <div class="h-16" ></div>
     </div>
 
   <div class="hidden md:flex  rounded-full w-24 h-24 border-2 border-white htransition-all duration-300 place-items-center" ></div>
@@ -108,9 +117,12 @@
 
 
 <!-- FOOTER -->
-<div class="h-64" style="" >
-
+<!-- <div class="" style="" > -->
+<div class="md:hidden flex h-64 justify-around my-12 items-center" >
+  <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
+<!-- </div> -->
 
 
 
@@ -120,22 +132,24 @@
 </template>
 
 
-<script lang='ts' >
-import { defineComponent, ref, reactive, watchEffect } from "@nuxtjs/composition-api";
+<script lang="ts" >
+import { defineComponent, ref, reactive, watch } from "@nuxtjs/composition-api";
 import moment from 'moment'
 import DatePicker from "./austin/datePicker.vue";
 const { DateTime } = require("luxon");
 export default defineComponent({
  props: ['partners'],
  components: {DatePicker},
- setup() {
+ setup(props, context) {
    const stage = ref(0)
    const resturant = ref(null)
    const personen = ref(4)
 
    const setResturant = (value) => {resturant.value=value;stage.value++}
 
-
+   watch(stage, ()=> {
+     if(stage.value < 0) {context.emit('click')}
+   })
 
    return {
      setResturant,

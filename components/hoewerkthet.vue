@@ -4,7 +4,7 @@
 <h2 class="text-center" >HOE WERKT HET 
 </h2>
           
-<div class="grid  gap-4 relative container custom-grid " style=""  > 
+<div id="scrollContainer" class="grid gap-4 relative container custom-grid h-96" style=""  > 
 
   <!-- IMAGES -->
   <div class="relative" >
@@ -20,9 +20,8 @@
 
   <!-- SELECTOR -->
   <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
-    <li class="flex items-center relative " v-for="(item,indexItem) in items"
-      :key="indexItem"
-      @click="selected=indexItem">
+    <li class="flex items-center relative " v-for="(item,indexItem) in items" 
+      :key="indexItem">
 
       <div v-show="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
         <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
@@ -46,8 +45,9 @@
 
 <script lang='ts' >
 import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
-import { gsap } from "gsap";
-import { ScrollTrigger } from "gsap/ScrollTrigger";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
 // import ScrollTrigger from "gsap/ScrollTrigger";
 // import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default defineComponent({
@@ -90,30 +90,44 @@ export default defineComponent({
     const list = ref(null)
     const progress=ref(0)
     const distanceBetween = ref('0px')
+
+
     onMounted(() => {
       const liList = list.value.getElementsByTagName('li')
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
+      gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
-      // NOTE gives error
-      gsap.registerPlugin(ScrollTrigger);
-      // console.log('gasp',gsap)
-      ScrollTrigger.create({
+      
+      let st  =ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
+        scrolller: '#scrollContainer',
         markers: false,
         scrub:1,
         pin:true,
-        snap: 1/2.97,
+        snap: 1/3.33,
         onUpdate: (self) => {
           let progressCheck = Number(self.progress.toFixed(3))*100;
-          console.log(progressCheck)
+
+
           if(!progressCheck) {
             progress.value=1;
           } else if(progressCheck>99) {progress.value=90}
           else{progress.value=progressCheck}
         },
         // start: "center center",
-        end: '1300px'
+        // start: 'top top',
+        end: '425px'
       })
+      setInterval(() =>{
+
+        console.log(st.scroll())
+        // st.scroll(4120)
+      },5000)
+      // const goTo = () => {
+      //   console.log('going to')
+      //   st.scroll(100)
+      // }
+      
     })
    const selected = ref(0)
    return {
@@ -121,7 +135,9 @@ export default defineComponent({
      items,
      distanceBetween,
      list,
-     progress
+     progress,
+    //  container,
+    //  goTo
    }
  },
 })

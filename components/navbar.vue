@@ -19,8 +19,8 @@
         <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#Menus">MENU</a>
         <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#contact">CONTACT</a>
         <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#Impressies">IMPRESSIES</a>
-        <a class="mx-4" v-for="(social,index) in socials" :key='index' :href="social.url">
-          <img :src="social.image" :alt="social.name" class="h-4 w-4  transition-all transform scale-100 hover:scale-125">
+        <a target="_blank" rel="noopener noreferrer" class="mx-4" v-for="(social,index) in socials" :key='index' :href="social.url">
+          <img  :src="social.image" :alt="social.name" class="h-4 w-4  transition-all transform scale-100 hover:scale-125">
         </a>
         <!-- <a href="https://www.instagram.com/chefsatyourtable/"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a> -->
         <!-- <a href="https://www.facebook.com/ChefsatyourTable"><img class="h-4 w-4 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a> -->
@@ -48,9 +48,12 @@
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="Impressies">IMPRESSIES</a>
           <div class="flex justify-evenly mt-12" >
-            <a @click="menu=!menu" href="https://www.instagram.com/chefsatyourtable/"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a>
-            <a @click="menu=!menu" href="https://www.facebook.com/ChefsatyourTable"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a>
-            <a @click="menu=!menu" href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a>
+            <a target="_blank" rel="noopener noreferrer" @click="menu=!menu" class="mx-4" v-for="(social,index) in socials" :key='index' :href="social.url">
+              <img  :src="social.image" :alt="social.name" class="h-8 w-8 transition-all transform scale-100 hover:scale-125">
+            </a>
+            <!-- <a target="_blank" rel="noopener noreferrer" @click="menu=!menu" href="https://www.instagram.com/chefsatyourtable/"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/instagram.svg" alt="Instagram"></a> -->
+            <!-- <a target="_blank" rel="noopener noreferrer" @click="menu=!menu" href="https://www.facebook.com/ChefsatyourTable"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/facebook.svg" alt="Facebook"></a> -->
+            <!-- <a target="_blank" rel="noopener noreferrer" @click="menu=!menu" href="https://www.linkedin.com/in/max-deenik-86a498187/?originalSubdomain=nl"><img class="h-8 w-8 transition-all transform scale-100 hover:scale-125" src="~/assets/images/socials/linkedin.svg" alt="Linkedin"></a> -->
           </div>
         </div>
       </transition>
@@ -62,7 +65,7 @@
 </template>
 
 
-<script lang='ts' >
+<script  >
 import { defineComponent, ref, watch } from "@nuxtjs/composition-api";
 export default defineComponent({
  props: ['socials'],

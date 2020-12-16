@@ -21,13 +21,13 @@
       <br>
       <p>Wilt u ook zo’n heerlijk verzorgde lunch, borrel of diner bereid door mij of één van mijn Chefs?</p>
       <br>
-      <i>Neem gerust contact met mij op.</i>
+      <i @click="$emit('click')" >Neem gerust contact met mij op.</i>
     </div>
   </div>
 </template>
 
 
-<script lang='ts' >
+<script  >
 export default {
  props: [],
  components: {},
