@@ -15,12 +15,12 @@
       <!-- <input type="text" name="NAAM"> -->
         <div class="my-2 w-full" >
           <h5>NAAM</h5>
-          <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="TELEFOONNUMMER">
+          <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="NAAM">
         </div>
 
         <div class="my-2 w-full" >
           <h5>EMAIL</h5>
-          <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="TELEFOONNUMMER">
+          <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="EMAIL">
         </div>
 
         <div class="my-2 w-full" >
@@ -30,7 +30,7 @@
 
         <div class="w-full my-2" >
           <h5 class="font-bold">WENSEN / VRAGEN</h5>
-          <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea>
+          <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="WensenEnNotities" ></textarea>
         </div>
 
         <button class="shadow-lg my-4 py-4 md:py-2 px-3 border-2 border-green bg-green text-white rounded-lg hover:border-white "  type='submit'> <h4 style="color:inherit;" >VERSTUUR</h4> </button>

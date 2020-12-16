@@ -65,7 +65,7 @@ export default defineComponent({
    color: String
  },
  components: {},
- setup() {
+ setup(props,context) {
    const open = reactive({
      day: false,
      month: false,
@@ -91,6 +91,10 @@ export default defineComponent({
 
 
     const selectedDate = ref(DateTime.local())
+    watch(selectedDate, () => {
+      context.emit('input', selectedDate.value.toLocaleString([], { hour: 'numeric',minute: '2-digit',month: 'long', year: 'numeric', }))
+    },{immediate:true})
+
     const setDate = (inputDate) => {
       selectedDate.value=inputDate;
       open.day=false;open.month=false;open.year=false;

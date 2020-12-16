@@ -30,7 +30,7 @@
       <div v-show="stage==0" class="flex flex-col gap-20 "  >
         <div class="flex-1 flex flex-col gap-20" >
           <h3 class="text-center font-normal" >Welk restaurant wilt u thuis?</h3>
-          <input type='hidden' name='resturant' v-model="resturant">
+          <input class="hidden" type='text' name='resturant' v-model="resturant">
           <ul class="flex flex-col md:flex-row justify-evenly h-auto w-64 md:w-full mx-auto" >
             <li @click="setResturant(partner)" :class="[resturant==partner ? 'border-green' : 'border-white','text-center my-4 md:my-0 py-4 md:py-6 shadow-xl bg-white text-green font-bold px-4 md:px-24  rounded-lg border-3  hover:border-gold transform hover:scale-110 transition-all duration-150']"
               v-for="(partner,index) in partners" :key="index">
@@ -64,8 +64,9 @@
 <div v-show="stage==2" class="flex  items-center container gap-40" >
   <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
   <div class="flex-1 flex flex-col text-center" >
+    <input class="hidden" type="text" v-model="date" >
     <h3 class="text-center" >Selecteer een datum en tijdstip</h3>
-    <DatePicker />
+    <DatePicker @input="setDate" />
     <!-- <div class="md:hidden flex justify-between my-2" >
       <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
       <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
@@ -144,9 +145,10 @@ export default defineComponent({
    const stage = ref(0)
    const resturant = ref(null)
    const personen = ref(4)
+   const date = ref('')
 
-   const setResturant = (value) => {resturant.value=value;stage.value++}
-
+   const setResturant = (value) => {resturant.value=value.name;stage.value++}
+   const setDate = (value) => {date.value=value}
    watch(stage, ()=> {
      if(stage.value < 0) {context.emit('click')}
    })
@@ -156,6 +158,8 @@ export default defineComponent({
      stage,
      resturant,
      personen,
+     setDate,
+     date
    }
    
  }
