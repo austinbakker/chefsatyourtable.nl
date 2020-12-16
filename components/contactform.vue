@@ -103,9 +103,9 @@
       <h6 class="font-bold">Wensen & Notities</h6>
       <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea> 
     </div> 
-    
-    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg md:mt-24"  type='submit'> <h4>VERSTUUR</h4> </button>  
-    <div class="h-16 " ></div> 
+    <div class="h-16 text-center w-full" >
+    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg md:mt-24 w-full"  type='submit'> <h4>VERSTUUR</h4> </button>  </div>
+    <!-- <div class=" " ></div>  -->
     </div>
 
   <div class="hidden md:flex  rounded-full w-24 h-24 border-2 border-white htransition-all duration-300 place-items-center" ></div>
@@ -118,8 +118,8 @@
 <!-- FOOTER -->
 <!-- <div class="" style="" > -->
 <div class="md:hidden flex h-64 justify-around my-0 md:my-12 items-center" >
-  <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-  <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div v-show="stage<3" @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div v-show="stage<3" @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
 <!-- </div> -->
 
