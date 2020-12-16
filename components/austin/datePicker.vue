@@ -1,6 +1,5 @@
 <template>
  <div>
-   <!-- {{selectedDate}} -->
  <div class="flex w-full justify-evenly mx-auto md:flex-row flex-col" >
 
    <!-- START DAY -->
@@ -53,6 +52,21 @@
   <!-- END YEARS -->
 
  </div>
+<!-- START - TIME  -->
+   <div class="relative transition-all duration-300 w-64 mx-auto hover:shadow-0 my-1" >
+     <h6 class="text-center" >Tijd</h6>
+     <!-- viewer -->
+     <div @click="setOpen('time')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
+       {{new Date(selectedDate).toLocaleString([],{ hour: 'numeric',minute: '2-digit' })}}
+     </div>
+     <!-- list -->
+     <div v-show="open.time" class="z-20 shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
+       <div @click="setDate(tijd)" class="hover:bg-gray"  v-for="(tijd,index) in tijden" :key="index"  >{{new Date(tijd).toLocaleString([],{hour: 'numeric',minute: '2-digit'})}}</div>
+       <!-- <div @click="setYear(year)" class="hover:bg-gray"  v-for="(year,index) in years" :key="index" v-show="new Date(year).toLocaleString([],{ year: 'numeric' })!=new Date(selectedDate).toLocaleString([],{ year: 'numeric' })" >{{new Date(year).toLocaleString([],{ year: 'numeric' })}}</div> -->
+     </div>
+   </div>
+<!-- END -  TIME -->
+
 </div>
 </template>
 
@@ -69,7 +83,8 @@ export default defineComponent({
    const open = reactive({
      day: false,
      month: false,
-     year: false
+     year: false,
+     time: false
    })
 
     const years = computed(() => {
@@ -89,29 +104,26 @@ export default defineComponent({
       if(item != 'year') open.year=false;
     }
 
-
-    const selectedDate = ref(DateTime.local())
-    watch(selectedDate, () => {
-      context.emit('input', selectedDate.value.toLocaleString([], { hour: 'numeric',minute: '2-digit',month: 'long', year: 'numeric', }))
+    const baseDate = DateTime.local().plus({days:3}).set({hours:7,minutes:0})
+    const selectedDate = ref(baseDate)
+    watch(selectedDate, () => { 
+      const formated = new Date(selectedDate.value).toLocaleTimeString([], {day: 'numeric', month: 'long', year: 'numeric',hour: '2-digit', minute:'2-digit', hour12: false,})
+      context.emit('input', formated)
     },{immediate:true})
 
-    const setDate = (inputDate) => {
-      selectedDate.value=inputDate;
-      open.day=false;open.month=false;open.year=false;
-    }
+    const setDate = (inputDate) => {selectedDate.value=inputDate;open.day=false;open.month=false;open.year=false;}
     const setYear = (year) => {selectedDate.value=selectedDate.value.set({year: new Date(year).getFullYear()})}
+    const setHour = (hour) => {sselectedDate.value=inputDate;}
 
 
     const months = ref([])
     watch(selectedDate, () => {
       const end = selectedDate.value.endOf('year')
       const now = DateTime.local().ts
-      const start = (selectedDate.value.startOf('year').ts>now) ?  selectedDate.value.startOf('year') : DateTime.local() 
+      const start = (selectedDate.value.startOf('year').ts>now) ?  selectedDate.value.startOf('year') : baseDate
       const Nmonths = Math.round(end.diff(start, ['months']).toObject().months)
-      // console.log('xmonths',Nmonths)
       const monthsList = []
       for (let index = 0; index <= Nmonths; index++) {
-        // const x = (selectedDate.value).startOf('year')
         monthsList.push(start.plus({months:index}))
       }
       months.value=monthsList
@@ -119,19 +131,32 @@ export default defineComponent({
 
 
     const days = ref([])
-    watch(
-      selectedDate,
-      () => {
-        // NOTE check if start is before today
-        const start = (selectedDate.value.startOf('month') < DateTime.local()) ? DateTime.local() : selectedDate.value.startOf('month')
+    watch( selectedDate, () => {
+        const start = (selectedDate.value.startOf('month') < DateTime.local()) ? baseDate  : selectedDate.value.startOf('month')
         const end = selectedDate.value.endOf('month')
         const Ndays = Math.round(end.diff(start, ['days']).toObject().days)
-        // console.log('n days', Ndays)
         const daysList=[]
         for (let index = 0; index < Ndays; index++) {
           daysList.push(start.plus({days:index}))
         }
         days.value=daysList
+      },
+      {immediate: true}
+      )
+
+      // tijden
+    const tijden = ref([])
+    watch( selectedDate, () => {
+        const start = (selectedDate.value.startOf('days') < DateTime.local()) ? baseDate  : selectedDate.value.startOf('days').set({hours:7,minutes:0})
+        const end = selectedDate.value.endOf('days')
+        console.log('starttime', start.hour)
+        const Nhours = (Math.round(end.diff(start, ['hours']).toObject().hours))*2
+        console.log('diff', Nhours)
+        const tijdList=[]
+        for (let index = 0; index < Nhours; index++) {
+          tijdList.push(start.plus({minutes:30*index}))
+        }
+        tijden.value=tijdList
       },
       {immediate: true}
     )
@@ -144,7 +169,8 @@ export default defineComponent({
      selectedDate,
      setDate,
      setYear,
-     setOpen
+     setOpen,
+     tijden
    }
    
  }
