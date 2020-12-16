@@ -87,7 +87,7 @@
 
      <div class="w-full" >
       <h5>E-MAIL</h5>
-      <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="EMAIL">
+      <input required class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="EMAIL">
     </div>
 
      <div class="w-full" >
