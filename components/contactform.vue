@@ -117,8 +117,8 @@
 <!-- FOOTER -->
 <!-- <div class="" style="" > -->
 <div class="md:hidden flex h-64 justify-around my-0 md:my-12 items-center" >
-  <div v-show="stage<3" @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-  <div v-show="stage<3" @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div v-show="stage<3" @click="stage--" class="flex shadow-xl rounded-full w-12 h-12 md:w-24 md:h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div v-show="stage<3" @click="stage++" class="flex shadow-xl rounded-full w-12 h-12 md:w-24 md:h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
 <!-- </div> -->
 
