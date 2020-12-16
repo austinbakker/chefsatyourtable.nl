@@ -9,11 +9,17 @@ export default {
   htmlAttrs: {
     lang: 'nl'
   },
+  modules: [
+    '@nuxtjs/gtm',
+  ],
   buildModules: [
     '@nuxtjs/composition-api',
     '@aceforth/nuxt-optimized-images',
     '@nuxtjs/tailwindcss'
   ],
+  gtm: {
+    id: 'GTM-PLSDV9Z'
+  },
   optimizedImages: {
     optimizeImages: true
   },
