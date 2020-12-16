@@ -1,9 +1,9 @@
 <template>
 <div class="relative overflow-x-hidden" >
 
-<!-- <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" > -->
-  <!-- <Lead @click="showContactForm=false" :partners='partners' /> -->
-<!-- </div> -->
+<div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
+  <Lead @click="showContactForm=false" :partners='partners' />
+</div>
   <!-- <Lead /> -->
 
 <div class="absolute top-0 w-screen" >
@@ -11,7 +11,7 @@
 </div> 
 
 <!-- NOTE responsive -->
-<Hero />
+<Hero @click="showContactForm=true" />
 <!-- <Lead /> -->
 <div class="my-12" id="overons" ><Overons /></div>
 
@@ -86,13 +86,13 @@ import Contact from "./../components/contact.vue";
 import Impressies from "./../components/impressies.vue";
 import Footer from "./../components/footer.vue";
 // import Lead from "./../components/lead.vue";
-// import Lead from "./../components/contactform.vue";
+import Lead from "./../components/contactform.vue";
 export default defineComponent({
  props: [],
  components: {
    Footer,
    HoeWerktHet,
-  //  Lead,
+   Lead,
    Navbar, Hero, Overons, Person, Partners,ExtraMogelijkhedenLocatie,Benefits,Menus,Contact,Impressies},
  setup() {
     const showContactForm = ref(false)
