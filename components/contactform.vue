@@ -50,10 +50,10 @@
       <h2 class="text-center" >{{personen}}</h2>
       <input name="personen" type="range" min="2" max="50" v-model='personen' class="slider" id="myRange">
     </div>
-    <div class="md:hidden flex justify-between my-12" >
+    <!-- <div class="md:hidden flex justify-between my-12" >
       <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
       <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-    </div>
+    </div> -->
   </div>
   <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
@@ -66,10 +66,10 @@
   <div class="flex-1 flex flex-col text-center" >
     <h3 class="text-center" >Selecteer een datum en tijdstip</h3>
     <DatePicker />
-    <div class="md:hidden flex justify-between my-2" >
+    <!-- <div class="md:hidden flex justify-between my-2" >
       <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
       <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-    </div>
+    </div> -->
   </div>
   <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
@@ -105,8 +105,8 @@
       <h6 class="font-bold">Wensen & Notities</h6>
       <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea>
     </div>
-    <button class="shadow-lg py-1 px-3 hover:border-green border-2 border-white rounded-lg"  type='submit'> <h4>VERSTUUR</h4> </button>
-    <div class="h-64" ></div>
+    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg"  type='submit'> <h4>VERSTUUR</h4> </button>
+    <div class="h-16" ></div>
     </div>
 
   <div class="hidden md:flex  rounded-full w-24 h-24 border-2 border-white htransition-all duration-300 place-items-center" ></div>
@@ -117,9 +117,12 @@
 
 
 <!-- FOOTER -->
-<div class="h-64" style="" >
-
+<!-- <div class="" style="" > -->
+<div class="md:hidden flex h-64 justify-around my-12 items-center" >
+  <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+  <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
+<!-- </div> -->
 
 
 
@@ -129,22 +132,24 @@
 </template>
 
 
-<script  >
-import { defineComponent, ref, reactive, watchEffect } from "@nuxtjs/composition-api";
+<script lang="ts" >
+import { defineComponent, ref, reactive, watch } from "@nuxtjs/composition-api";
 import moment from 'moment'
 import DatePicker from "./austin/datePicker.vue";
 const { DateTime } = require("luxon");
 export default defineComponent({
  props: ['partners'],
  components: {DatePicker},
- setup() {
+ setup(props, context) {
    const stage = ref(0)
    const resturant = ref(null)
    const personen = ref(4)
 
    const setResturant = (value) => {resturant.value=value;stage.value++}
 
-
+   watch(stage, ()=> {
+     if(stage.value < 0) {context.emit('click')}
+   })
 
    return {
      setResturant,

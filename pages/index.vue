@@ -2,7 +2,7 @@
 <div class="relative overflow-x-hidden" >
 
 <div class="fixed top-0 z-50 w-full h-screen" v-show="showContactForm" >
-  <Lead @click="showContactForm=false" :partners='partners' />
+  <Lead  @click="showContactForm=false" :partners='partners' />
 </div>
   <!-- <Lead /> -->
 
