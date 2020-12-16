@@ -4,7 +4,7 @@
  <div class="flex w-full justify-evenly mx-auto md:flex-row flex-col" >
 
    <!-- START DAY -->
-   <div class="relative transition-all  duration-300 hover:shadow-0" >
+   <div class="relative transition-all  duration-300 hover:shadow-0 my-1" >
      <!-- viewer -->
      <h6 class="text-center" >DAG</h6>
      <div @click="open.day=!open.day" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
@@ -19,7 +19,7 @@
 
 
    <!-- START MONTHS -->
-   <div class="relative transition-all duration-300 hover:shadow-0" >
+   <div class="relative transition-all duration-300 hover:shadow-0 my-1" >
      <!-- viewer -->
      <h6 class="text-center" >MAAND</h6>
      <div @click="open.month=!open.month" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
@@ -36,7 +36,7 @@
 
 
    <!-- START YEARS -->
-   <div class="relative transition-all duration-300 hover:shadow-0" >
+   <div class="relative transition-all duration-300 hover:shadow-0 my-1" >
      <h6 class="text-center" >JAAR</h6>
      <!-- viewer -->
      <div @click="open.year=!open.year" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
