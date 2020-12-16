@@ -6,24 +6,19 @@
 </div>
   <!-- <Lead /> -->
 
-<div class="absolute top-0 w-screen" >
+<div class="absolute top-0 w-screen z-30" >
   <Navbar :socials='socials' />
 </div> 
+
+<div class="fixed top-0 right-0 z-20 " >
+  <button @click="showContactForm=true" class="bg-green px-8 py-2 rounded-bl-lg font-bold text-white shadow-lg" >Aanvragen</button>
+</div>
 
 <!-- NOTE responsive -->
 <Hero @click="showContactForm=true" />
 <!-- <Lead /> -->
 <div class="my-12" id="overons" ><Overons /></div>
 
-<!-- TODO SETUP FORM -->
-<!-- <form action="POST" data-netlify="true"  >
-  <p>
-    <label>Your Name: <input type="text" name="name" /></label>   
-  </p>
-  <p>
-    <button type="submit">Send</button>
-  </p>
-</form> -->
 
 <!-- NOTE responsive -->
 <div class="my-12" id="person" ><Person @click="showContactForm=true" /></div>
