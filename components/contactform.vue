@@ -100,11 +100,10 @@
       <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="WOONPLAATS">
     </div>
     <div class="w-full" >
-      <h6 class="font-bold">Wensen & Notities</h6>
+      <h6 class="font-bold">WENSEN & NOTITIES</h6>
       <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea> 
     </div> 
-    <div class="h-16 text-center w-full" >
-    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg md:mt-24 w-full"  type='submit'> <h4>VERSTUUR</h4> </button>  </div>
+    <div class="h-16 md:my-24 text-center w-full" ><button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg  w-full"  type='submit'> <h4>VERSTUUR</h4> </button>  </div>
     <!-- <div class=" " ></div>  -->
     </div>
 
