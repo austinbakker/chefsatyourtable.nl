@@ -1,17 +1,17 @@
 <template>
   <div class="flex relative container h-full " >
     <div class="bg-gold px-4 md:px-16 py-8 md:py-4 h-auto flex flex-col justify-evenly  mx-auto rounded-md flex-1 gap-4 " >
-      <h2 class="text-center" >CONTACT</h2>
+      <h2 class="text-center" > CONTACT</h2>
       <ul class="text-center flex flex-col gap-2" >
-        <li>Max Deenik</li>
-        <li class="scale-100 hover:font-bold hover:text-white hover:scale-125 transform transition-all" ><a  href="mailto:info@chefsatyourtable.nl">info@chefsatyourtable.nl</a></li>
-        <li class="scale-100 hover:font-bold hover:text-white hover:scale-125 transform transition-all" ><a href="tel:+31852007546">T: +31 (0)85 200 75 46</a></li>
+        <li><h6> Max Deenik</h6></li>
+        <li class="scale-100 hover:font-bold hover:text-white hover:scale-125 transform transition-all" ><a  href="mailto:info@chefsatyourtable.nl"> <h6>info@chefsatyourtable.nl</h6> </a></li>
+        <li class="scale-100 hover:font-bold hover:text-white hover:scale-125 transform transition-all" ><a href="tel:+31852007546"> <h6>T: +31 (0)85 200 75 46</h6> </a></li>
       </ul>
      <form name="lead"
       method="post" data-netlify="true"
       action='/bedankt'
       class="w-full h-full flex flex-col ">
-      <input type="hidden" name="form-name" value="contact" />
+      <input type="hidden" name="form-name" value="lead" />
       <!-- <input type="text" name="NAAM"> -->
         <div class="my-2 w-full" >
           <h5>NAAM</h5>
