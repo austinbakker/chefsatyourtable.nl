@@ -1,19 +1,19 @@
 <template>
-<div class="h-screen flex bg-white" style=""  >
+<div class="h-screen flex bg-white relative"  >
   <div class="flex  w-full" style="" >
 
     <form name="contact"
       method="post" data-netlify="true"
       action='/bedankt'
-      class="w-full h-screen flex flex-col ">
+      class="w-full h-full flex flex-col overflow-y-scroll ">
       <input type="hidden" name="form-name" value="contact" />
        <!-- <p class="hidden">
           <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
         </p> -->
 
 <!-- START - overvioew  -->
-<div class="h-72 flex flex-col md:flex-row" >
-  <img @click="$emit('click')" class="md:mx-0 mx-auto h-48 w-48 object-contain md:rounded-br-md"  src="~/assets/images/logo.png" alt="logo">
+<div class="flex flex-col md:flex-row" >
+  <img @click="$emit('click')" class="md:mx-0 mx-auto  w-0 h-6 md:h-48 md:w-48 object-contain md:rounded-br-md"  src="~/assets/images/logo.png" alt="logo">
   <div class="flex justify-evenly items-center flex-1" >
     <h4 @click="stage=0" :class="[stage==0 ? 'text-green' : 'text-gold', 'transition-colors' ]" >RESTAURANT</h4>
     <h4 @click="stage=1" :class="[stage==1 ? 'text-green' : 'text-gold', 'transition-colors' ]" >PERSONEN</h4>
@@ -23,8 +23,9 @@
 </div>
 <!-- END -  overvioew -->
 
-<!-- FORM CONTAINER -->
-<div class="flex flex-col gap-20 flex-1 justify-center" >
+<!-- NOTE this is working-->
+<!-- <div class="flex flex-col relative flex-1 justify-center overflow-y-scroll" > -->
+<div class="flex flex-col relative flex-1 justify-center " >
 
 <!-- START - stage 1  -->
       <div v-show="stage==0" class="flex flex-col gap-20 "  >
@@ -67,10 +68,6 @@
     <input class="hidden" type="text" :value="date" name="datum" >
     <h3 class="text-center" >Selecteer een datum en tijdstip</h3>
     <DatePicker @input="setDate" />
-    <!-- <div class="md:hidden flex justify-between my-2" >
-      <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-      <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-    </div> -->
   </div>
   <div @click="stage++" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
@@ -78,21 +75,22 @@
 
 
 <!-- START - STAGE 4  -->
-  <div v-show="stage==3" class="flex items-start md:items-center container gap-40 " >
-    <div @click="stage--" class="hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
-    <div class="grid grid-cols-1 overflow-y-scroll gap-10 w-full max-w-1xl mx-auto overflow-y-show h-3/4 shadow-2xl px-8 py-8 rounded-lg" style="" >
-
+  <div v-show="stage==3" class="flex items-start mt-12 md:mt-0  container relative  " >
+    <div @click="stage--" class="self-center hidden md:flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
+    <div class="grid grid-cols-1 overflow-y-scroll gap-4 w-full max-w-1xl  shadow-2xl px-8 py-8 rounded-lg mx-4  flex-1"  >
+    <!-- <div class="grid grid-cols-1  gap-4 w-full max-w-1xl overflow-y-scroll shadow-2xl rounded-lg"  > -->
+    <!-- <div style="height:200px" ></div> -->
     <div class="w-full" >
       <h5>NAAM</h5>
       <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="NAAM">
     </div>
 
-    <div class="w-full" >
+     <div class="w-full" >
       <h5>E-MAIL</h5>
       <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="EMAIL">
     </div>
 
-    <div class="w-full" >
+     <div class="w-full" >
       <h5>TELEFOONNUMMER</h5>
       <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="TELEFOONNUMMER">
     </div>
@@ -101,13 +99,13 @@
       <h5>WOONPLAATS</h5>
       <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="WOONPLAATS">
     </div>
-
     <div class="w-full" >
       <h6 class="font-bold">Wensen & Notities</h6>
-      <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea>
-    </div>
-    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg"  type='submit'> <h4>VERSTUUR</h4> </button>
-    <div class="h-16" ></div>
+      <textarea class="bg-gray w-full h-20 py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md" name="Wensen+Notities" ></textarea> 
+    </div> 
+    
+    <button class="shadow-xl py-1 px-3 hover:border-green border-2 border-white rounded-lg md:mt-24"  type='submit'> <h4>VERSTUUR</h4> </button>  
+    <div class="h-16 " ></div> 
     </div>
 
   <div class="hidden md:flex  rounded-full w-24 h-24 border-2 border-white htransition-all duration-300 place-items-center" ></div>
@@ -119,7 +117,7 @@
 
 <!-- FOOTER -->
 <!-- <div class="" style="" > -->
-<div class="md:hidden flex h-64 justify-around my-12 items-center" >
+<div class="md:hidden flex h-64 justify-around my-0 md:my-12 items-center" >
   <div @click="stage--" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="transform rotate-180 mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
   <div @click="stage++" class="flex shadow-xl rounded-full w-24 h-24 border-2 border-white hover:border-green transition-all duration-300  place-items-center" ><img class="mx-auto w-8 h-8" src="~/assets/images/next.svg" alt="arrow"></div>
 </div>
