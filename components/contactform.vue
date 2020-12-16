@@ -3,8 +3,8 @@
   <div class="flex  w-full" style="" >
 
     <form name="contact"
-      method="POST" data-netlify="true"
-      action='/bedankt/'
+      method="post" data-netlify="true"
+      action='/bedankt'
       class="w-full h-screen flex flex-col ">
       <input type="hidden" name="form-name" value="contact" />
        <!-- <p class="hidden">
