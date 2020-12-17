@@ -6,13 +6,10 @@
    <div class="relative transition-all  duration-300 hover:shadow-0 my-1" >
      <!-- viewer -->
      <h6 class="text-center" >DAG</h6>
-     <div @click="setOpen('day')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
-       {{ selectedDate.get('day') }}
-     </div>
+     <div @click="setOpen('day')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" > {{ selectedDate.get('day') }} </div>
      <!-- list -->
      <div v-show="open.day" class="z-20 shadow-0 transition-all max-h-48 absolute border-2 border-green rounded-md text-center w-full mt-5 flex flex-col gap-3 bg-white py-2  overflow-y-auto overflowRestyling" >
        <div @click="setDate(day)" class="hover:bg-gray"  v-for="(day,index) in days" :key="index"  >{{ day.get('day') }}</div>
-       <!-- <div @click="setDate(day)" class="hover:bg-gray"  v-for="(day,index) in days" :key="index" v-show="day.get('day')!=selectedDate.get('day')" >{{ selectedDate.get('day') }}</div> -->
      </div>
    </div>
   <!-- END DAY -->

@@ -8,7 +8,7 @@
     </div>
     <!-- DESKTOP -->
     <div class="hidden lg:block relative h-full w-full  " >
-      <img class="absolute object-cover h-full rounded-full" style="left:-25%; " src="~/assets/images/person/1.png" alt="Max Deenik">
+      <img class="absolute object-cover" style="left:-25%;" src="~/assets/images/person/1-eplis.png" alt="Max Deenik">
     </div>
 
     <div>

@@ -11,7 +11,7 @@
     <transition name="fade" mode="out-in" >
       <template v-for="(item,index) in items"  >
         <!-- desktop version -->
-        <div v-if="progress < (index+1)*33 && progress >index*33" :key="index" class="relative md:absolute mx-auto w-24 h-24 md:w-64 md:h-64 custom-image-responsive" style="" >
+        <div v-if="progress < (index+1)*33 && progress >index*33" :key="index" class="relative md:absolute mx-auto w-24 h-24 md:w-96 md:h-96 custom-image-responsive" style="" >
           <img class="relative md:absolute md:-left-1/4 h-full object-cover" :src="item.image" alt="image of food">
         </div>
       </template>
@@ -48,19 +48,9 @@ import { defineComponent, onMounted, ref } from "@nuxtjs/composition-api";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 import { ScrollToPlugin } from "gsap/dist/ScrollToPlugin";
-// import ScrollTrigger from "gsap/ScrollTrigger";
-// import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 export default defineComponent({
  props: [],
  components: {},
-  // head() {
-  //   return {
-  //     script: [
-  //       {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/gsap.min.js'},
-  //       {src:'https://cdnjs.cloudflare.com/ajax/libs/gsap/3.5.1/ScrollTrigger.min.js'}
-  //     ],
-  //   }
-  // },
  setup() {
 
    const items = [
@@ -107,8 +97,6 @@ export default defineComponent({
         snap: 1/3.33,
         onUpdate: (self) => {
           let progressCheck = Number(self.progress.toFixed(3))*100;
-
-
           if(!progressCheck) {
             progress.value=1;
           } else if(progressCheck>99) {progress.value=90}
@@ -118,15 +106,12 @@ export default defineComponent({
         // start: 'top top',
         end: '425px'
       })
-      setInterval(() =>{
+      // setInterval(() =>{
 
-        console.log(st.scroll())
-        // st.scroll(4120)
-      },5000)
-      // const goTo = () => {
-      //   console.log('going to')
-      //   st.scroll(100)
-      // }
+      //   console.log(st.scroll())
+      //   // st.scroll(4120)
+      // },5000)
+
       
     })
    const selected = ref(0)
@@ -135,9 +120,7 @@ export default defineComponent({
      items,
      distanceBetween,
      list,
-     progress,
-    //  container,
-    //  goTo
+     progress
    }
  },
 })

@@ -29,7 +29,7 @@
     
 <!-- NOTE responsive -->
 <div class="h-96 w-full " >
-  <img class=" h-full object-cover md:object-cover w-full" src="~/assets/images/food.png" alt="food">
+  <img class=" h-full md:h-auto object-cover md:object-cover w-full" src="~/assets/images/food.png" alt="food">
 </div>
 <!-- END PARTNERS -->
 

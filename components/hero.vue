@@ -2,8 +2,10 @@
   <div class="h-screen relative" >
     <!-- HERO IMAGES -->
     <div ref='images' class="h-full w-screen overflow-hidden" >
-      <transition name="slide-fade" v-for="(image,index) in images" :key="index">
-        <img class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden" v-show="selected==index" :src="image" alt="hero image 1">
+      <transition name="slide-fade"  >
+        <template v-for="(image,index) in images">
+          <img :key="index" class="absolute top-0 left-0 object-cover w-full h-full overflow-hidden" v-if="selected==index" :src="image" alt="hero image 1">
+        </template>
       </transition>
     </div>
     
@@ -20,6 +22,11 @@
     </div>
     <!-- END -  SLIDER -->
 
+  <!-- <transition name='fade' mode="out-in" >
+    <template v-for="(item,index) in items"   >
+      <div :key='index' v-if="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
+    </template>
+  </transition> -->
 
   </div>
 </template>
@@ -59,9 +66,15 @@ export default defineComponent({
 }
 .slide-fade-enter, .slide-fade-leave-to
 /* .slide-fade-leave-active below version 2.1.8 */ {
-  transform: translateX(10px);
+  transform: translateX(100px);
   opacity: 0;
 }
+// .slide-fade-leave-to{
+//   transform: translateX(-100vw);
+// }
+// .slide-fade-enter{
+//   transition-delay: 300ms;
+// }
  
 //POWERED BY AUSTIN
 </style>
