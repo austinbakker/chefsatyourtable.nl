@@ -20,7 +20,7 @@
 
         <div class="my-2 w-full" >
           <h6>EMAIL</h6>
-          <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="EMAIL">
+          <input requiredclass="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="EMAIL">
         </div>
 
         <div class="my-2 w-full" >
