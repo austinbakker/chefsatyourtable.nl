@@ -46,7 +46,7 @@
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#Menus">MENU</a>
           <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#contact">CONTACT</a>
-          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="Impressies">IMPRESSIES</a>
+          <a @click="menu=!menu" class="my-4 transition-all transform scale-100 hover:scale-125" href="#Impressies">IMPRESSIES</a>
           <div class="flex justify-evenly mt-12" >
             <a target="_blank" rel="noopener noreferrer" @click="menu=!menu" class="mx-4" v-for="(social,index) in socials" :key='index' :href="social.url">
               <img  :src="social.image" :alt="social.name" class="h-8 w-8 transition-all transform scale-100 hover:scale-125">
