@@ -4,15 +4,15 @@
   <div class="flex flex-col">
   <div class="h-32" ></div>
   <div class="flex flex-col " >
-    <h2 class="text-center md:text-left" >WAT ZIT ERBIJ INBEGREPEN?</h2>
+    <h2 class="text-center md:text-left" >INCLUSIEF</h2>
     <ul class="my-12 flex flex-wrap items-center justify-center md:justify-start" >
-      <li v-for="(item,index) in items" :key="index" class="mx-6" >
+      <li v-for="(item,index) in items" :key="index" class="mx-6 my-2" >
         <img class="mx-auto h-16 w-16 object-contain" :src="item.image" :alt="item.name">
         <div class="mt-4 text-center" >{{item.name}}</div>
       </li>
     </ul>
   </div>
-  <div class="h-32" ></div>
+  <div class="h-0 md:h-16" ></div>
   </div>
 
   <div class="w-96 flex h-auto relative "  >
@@ -30,10 +30,10 @@ export default {
  components: {},
  setup() {
    const items = [
-     {
-       name: "Service",
-       image: require('~/assets/images/benefits/1.png')
-     },
+    //  {
+    //    name: "Service",
+    //    image: require('~/assets/images/benefits/1.png')
+    //  },
      {
        name: "Bestek",
        image: require('~/assets/images/benefits/2.png')

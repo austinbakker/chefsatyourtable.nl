@@ -30,7 +30,7 @@
   </ul> 
 
   <!-- CONTENT -->
-  <div class="h-full flex flex-col items-center justify-around overflow-y-scroll sm:overscroll-y-hidden"  >
+  <div class="h-full flex flex-col items-center justify-around overflow-y-scroll sm:overflow-y-hidden"  >
   <transition-group name='fade' mode="out-in" >
     <template v-for="(item,index) in items"   >
       <div :key='index' v-if="progress < (index+1)*33 && progress >index*33 || index==0 && progress<3" class="flex flex-col justify-center " >
@@ -55,7 +55,6 @@ export default defineComponent({
  props: [],
  components: {},
  setup() {
-
    const items = [
      {
        name: 'Voorafgaand',
@@ -94,7 +93,7 @@ export default defineComponent({
       
       controller = ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        markers: true,
+        markers: false,
         scrub:1,
         pin:true,
         snap: 1/3,

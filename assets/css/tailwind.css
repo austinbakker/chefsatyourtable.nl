@@ -22,6 +22,11 @@
   font-family: CormorantGaramondLightItalic;
   src: url(font/CormorantGaramond-LightItalic.ttf);
 }
+/* font-family: TypefaceSeven; */
+@font-face {
+  font-family: TypefaceSeven;
+  src: url(font/TypefaceSeven.ttf);
+}
 *{
   margin:0;padding:0;
   font-family: GlacialIndifference;

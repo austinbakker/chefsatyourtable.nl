@@ -47,7 +47,7 @@
 
 
 <!-- NOTE responsive -->
-<div class="my-8" id="Menus" ><Menus /></div>
+<div class="" id="Menus" ><Menus /></div>
 
 
 
