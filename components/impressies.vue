@@ -25,6 +25,10 @@ export default defineComponent({
      require('~/assets/images/impressies/5.jpg'),
      require('~/assets/images/impressies/6.jpg'),
      require('~/assets/images/impressies/7.jpg'),
+     require('~/assets/images/impressies/8.jpg'),
+     require('~/assets/images/impressies/9.jpg'),
+     require('~/assets/images/impressies/10.jpg'),
+     require('~/assets/images/impressies/11.jpg'),
    ]
 
    return {
