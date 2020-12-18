@@ -82,7 +82,7 @@
     <!-- <div style="height:200px" ></div> -->
     <div class="w-full" >
       <h5>NAAM</h5>
-      <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="NAAM">
+      <input required class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="NAAM">
     </div>
 
      <div class="w-full" >
@@ -92,7 +92,7 @@
 
      <div class="w-full" >
       <h5>TELEFOONNUMMER</h5>
-      <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="TELEFOONNUMMER">
+      <input required class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="TELEFOONNUMMER">
     </div>
 
     <div class="w-full" >

@@ -4,7 +4,7 @@
 <h2 class="text-center" >HOE WERKT HET 
 </h2>
           
-<div id="scrollContainer" class="grid gap-4 relative container custom-grid h-96" style=""  > 
+<div ref="scrollContainer" class="grid gap-4 relative container custom-grid h-auto" style=""  > 
 
   <!-- IMAGES -->
   <div class="relative" >
@@ -19,10 +19,8 @@
   </div>
 
   <!-- SELECTOR -->
-  <ul ref="list" class="relative flex w-1/2 mx-auto flex-col justify-evenly h-64" >
-    <li class="flex items-center relative " v-for="(item,indexItem) in items" 
-      :key="indexItem">
-
+  <ul ref="list" class="relative flex  mx-auto my-auto flex-col justify-evenly h-64" >
+    <li @click='setScrollPosition(indexItem)' class="flex items-center relative " v-for="(item,indexItem) in items" :key="indexItem">
       <div v-show="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
         <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
       </div>
@@ -34,7 +32,7 @@
   <!-- CONTENT -->
   <transition name='fade' mode="out-in" >
     <template v-for="(item,index) in items"   >
-      <div :key='index' v-if="progress < (index+1)*33 && progress >index*33" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
+      <div :key='index' v-if="progress < (index+1)*33 && progress > index*33" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
     </template>
   </transition>
 
@@ -80,17 +78,17 @@ export default defineComponent({
     const list = ref(null)
     const progress=ref(0)
     const distanceBetween = ref('0px')
+    const scrollContainer = ref(null)
 
-
+    var controller = void
     onMounted(() => {
       const liList = list.value.getElementsByTagName('li')
       distanceBetween.value=liList[1].getBoundingClientRect().top - liList[0].getBoundingClientRect().top + 'px'
       gsap.registerPlugin(ScrollTrigger, ScrollToPlugin);
 
       
-      let st  =ScrollTrigger.create({
+      controller = ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        scrolller: '#scrollContainer',
         markers: false,
         scrub:1,
         pin:true,
@@ -104,23 +102,30 @@ export default defineComponent({
         },
         // start: "center center",
         // start: 'top top',
-        end: '425px'
+        end: '600px'
       })
-      // setInterval(() =>{
 
-      //   console.log(st.scroll())
-      //   // st.scroll(4120)
+
+      // setInterval(() =>{
+      //   controller.scroll(controller.start + 0.66 * (controller.end - controller.start));
       // },5000)
 
       
     })
+    const setScrollPosition = (index) => {
+      const multiplyer = 0.38
+      console.log('progress', index*multiplyer)
+      controller.scroll(controller.start + (index*multiplyer) * (controller.end - controller.start));
+    }
    const selected = ref(0)
    return {
      selected,
      items,
      distanceBetween,
      list,
-     progress
+     progress,
+     scrollContainer,
+     setScrollPosition
    }
  },
 })
@@ -135,7 +140,7 @@ export default defineComponent({
   // max-width: 0px;
 }
 .fade-enter-active{
-  // transition-delay: 700ms;
+  transition-delay: 1000ms;
   // max-width: 2000px;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
