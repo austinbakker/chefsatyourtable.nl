@@ -4,37 +4,42 @@
 <h2 class="text-center" >HOE WERKT HET 
 </h2>
           
-<div ref="scrollContainer" class="grid gap-4 relative container custom-grid h-auto" style=""  > 
+<div ref="scrollContainer" class="grid gap-4 relative container custom-grid h-full" style=""  > 
 
   <!-- IMAGES -->
   <div class="relative" >
-    <transition name="fade" mode="out-in" >
+    <transition-group name="fade" mode="out-in" >
       <template v-for="(item,index) in items"  >
         <!-- desktop version -->
-        <div v-if="progress < (index+1)*33 && progress >index*33" :key="index" class="relative md:absolute mx-auto w-24 h-24 md:w-96 md:h-96 custom-image-responsive" style="" >
-          <img class="relative md:absolute md:-left-1/4 h-full object-cover" :src="item.image" alt="image of food">
-        </div>
+        <!-- <div  class="relative md:absolute mx-auto w-24 h-24 md:w-96 md:h-96 custom-image-responsive" style="" > -->
+          <img v-if="progress < (index+1)*33 && progress >index*33 || index==0 && progress<3" :key="index" class="mx-auto relative md:absolute md:-left-1/4 h-full object-contain" :src="item.image" alt="image of food">
+        <!-- </div> -->
       </template>
-    </transition>
+    </transition-group>
   </div>
 
   <!-- SELECTOR -->
-  <ul ref="list" class="relative flex  mx-auto my-auto flex-col justify-evenly h-64" >
-    <li @click='setScrollPosition(indexItem)' class="flex items-center relative " v-for="(item,indexItem) in items" :key="indexItem">
-      <div v-show="indexItem<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
-        <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
+  <ul ref="list" class="relative flex  mx-auto my-auto flex-col justify-evenly h-full " >
+    <li @click='setScrollPosition(index)' class="flex items-center relative " v-for="(item,index) in items" :key="index">
+      <div v-show="index<items.length-1" class=" w-4 top-4 absolute flex items-center" :style="{height: distanceBetween}" >
+        <div :class="[progress>index*33 || index==0 ? 'bg-green' : 'bg-gold' ,'w-0.5 transition-all duration-500 h-full mx-auto rounded-full']" ></div>
       </div>
-      <div :class="[progress>indexItem*33 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
-      <div :class="[progress>indexItem*33 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
+      <div :class="[progress>index*33 || index==0 ? 'bg-green' : 'bg-white' ,'duration-500 z-10 transition-all w-4 h-4 border-green border-2 rounded-full shadow-xl']" ></div>
+      <div :class="[progress>index*33 || index==0 ? 'font-bold' : '', 'duration-500 ml-6 transition-all']" >{{item.name}}</div>
     </li>
   </ul> 
 
   <!-- CONTENT -->
-  <transition name='fade' mode="out-in" >
+  <div class="h-full flex flex-col items-center justify-around overflow-y-scroll sm:overscroll-y-hidden"  >
+  <transition-group name='fade' mode="out-in" >
     <template v-for="(item,index) in items"   >
-      <div :key='index' v-if="progress < (index+1)*33 && progress > index*33" class="flex flex-col justify-center" ><p  v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p></div>
+      <div :key='index' v-if="progress < (index+1)*33 && progress >index*33 || index==0 && progress<3" class="flex flex-col justify-center " >
+        <div class="h-12" ></div>
+        <p class="" v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p>
+      </div>
     </template>
-  </transition>
+  </transition-group>
+  </div>
 
 </div>
 </div>
@@ -89,33 +94,30 @@ export default defineComponent({
       
       controller = ScrollTrigger.create({
         trigger: '#hoewerkthet-1234',
-        markers: false,
+        markers: true,
         scrub:1,
         pin:true,
-        snap: 1/3.33,
+        snap: 1/3,
         onUpdate: (self) => {
           let progressCheck = Number(self.progress.toFixed(3))*100;
-          if(!progressCheck) {
-            progress.value=1;
-          } else if(progressCheck>99) {progress.value=90}
-          else{progress.value=progressCheck}
+          // if(!progressCheck) {
+          //   progress.value=1;
+          // } else if(progressCheck>99) {progress.value=90}
+          // else{progress.value=progressCheck}
+          progress.value=progressCheck
         },
         // start: "center center",
         // start: 'top top',
         end: '600px'
       })
 
-
-      // setInterval(() =>{
-      //   controller.scroll(controller.start + 0.66 * (controller.end - controller.start));
-      // },5000)
-
       
     })
     const setScrollPosition = (index) => {
-      const multiplyer = 0.38
-      console.log('progress', index*multiplyer)
-      controller.scroll(controller.start + (index*multiplyer) * (controller.end - controller.start));
+      const multiplyer = 0.44
+      const controllerHeight = (controller.end - controller.start)
+      const scrollToPostion = controller.start + (controllerHeight*(0.33*index))
+      controller.scroll(scrollToPostion)
     }
    const selected = ref(0)
    return {
@@ -136,11 +138,11 @@ export default defineComponent({
 
 <style lang='scss' >
  .fade-enter-active, .fade-leave-active {
-  transition: all 500ms;
+  transition: all 250ms;
   // max-width: 0px;
 }
 .fade-enter-active{
-  transition-delay: 1000ms;
+  transition-delay: 300ms;
   // max-width: 2000px;
 }
 .fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
@@ -148,11 +150,11 @@ export default defineComponent({
 }
 .custom-grid{
   @media (min-width: 768px) {
-    grid-template-columns: 10% 1fr 40%;
+    grid-template-columns: 30% 1fr 40%;
     grid-template-rows: 1fr;
   }
   grid-template-columns: 1fr;
-  grid-template-rows: 10% 1fr 40%;
+  grid-template-rows: 20% 1fr 50%;
 }
 .custom-image-responsive{
     @media (min-width: 768px) {
