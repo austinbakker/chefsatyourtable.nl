@@ -19,7 +19,7 @@ export default defineComponent({
  setup() {
    const images = [
      require('~/assets/images/impressies/1.jpg'),
-     require('~/assets/images/impressies/2.jpg'),
+    //  require('~/assets/images/impressies/2.jpg'),
      require('~/assets/images/impressies/3.jpg'),
      require('~/assets/images/impressies/4.jpg'),
      require('~/assets/images/impressies/5.jpg'),

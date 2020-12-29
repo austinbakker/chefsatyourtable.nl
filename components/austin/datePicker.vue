@@ -3,7 +3,7 @@
  <div class="flex w-full justify-evenly mx-auto md:flex-row flex-col" >
 
    <!-- START DAY -->
-   <div class="relative transition-all  duration-300 hover:shadow-0 my-1" >
+   <div class="relative transition-all  duration-300 hover:shadow-0 my-1 w-32 mx-auto" >
      <!-- viewer -->
      <h6 class="text-center" >DAG</h6>
      <div @click="setOpen('day')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" > {{ selectedDate.get('day') }} </div>
@@ -16,7 +16,7 @@
 
 
    <!-- START MONTHS -->
-   <div class="relative transition-all duration-300 hover:shadow-0 my-1" >
+   <div class="relative transition-all duration-300 hover:shadow-0 my-1 w-32 mx-auto " >
      <!-- viewer -->
      <h6 class="text-center" >MAAND</h6>
      <div @click="setOpen('month')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
@@ -34,7 +34,7 @@
 
 
    <!-- START YEARS -->
-   <div class="relative transition-all duration-300 hover:shadow-0 my-1" >
+   <div class="relative transition-all duration-300 hover:shadow-0 my-1 w-32 mx-auto" >
      <h6 class="text-center" >JAAR</h6>
      <!-- viewer -->
      <div @click="setOpen('year')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
@@ -50,7 +50,9 @@
 
  </div>
 <!-- START - TIME  -->
-   <div class="relative transition-all duration-300 w-64 mx-auto hover:shadow-0 my-1" >
+<div  class="flex justify-evenly" >
+  <div>  </div>
+   <div class="relative transition-all duration-300 w-48 mx-auto hover:shadow-0 my-1" >
      <h6 class="text-center" >Tijd</h6>
      <!-- viewer -->
      <div @click="setOpen('time')" class=" border-2 border-green rounded-md px-8 py-2 font-bold styled-select" >
@@ -62,6 +64,8 @@
        <!-- <div @click="setYear(year)" class="hover:bg-gray"  v-for="(year,index) in years" :key="index" v-show="new Date(year).toLocaleString([],{ year: 'numeric' })!=new Date(selectedDate).toLocaleString([],{ year: 'numeric' })" >{{new Date(year).toLocaleString([],{ year: 'numeric' })}}</div> -->
      </div>
    </div>
+   <div></div>
+</div>
 <!-- END -  TIME -->
 
 </div>
