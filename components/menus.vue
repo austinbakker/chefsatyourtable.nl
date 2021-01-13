@@ -56,19 +56,19 @@ export default {
          fontFamily: 'TypefaceSeven',
          listStyle: 'disc',
          items: [
-           'Brood en kruidenmayonaise',
-           'Huisgerookte zalm - wakame - hoisin - wasabi - yuzu',
-           'Salade Visaandeschelde - kreeft - eendenlever - truffel - balsamico',
-           'Tonijntartaar - cornichon - kappertjes - mosterd - sjalot - kwartelei',
-           'Cannelloni à la bouillabaisse - vis - schaal- en schelpdieren - rouille - gruyère',
-           'Coquille - brandade - aardpeer - truffel',
-           'Vis van de markt - artisjok - mousseline - barigoule',
-           'Chocolade - koffie',
-           'Lemon pie - meringue',
-           'Zoetigheid voor bij de koffie'
+            "Brood en kruidenmayonaise",
+            "Sashimi van tonijn en zeebaars",
+            "Huisgerookte zalm - wakame - hoisin - wasabi - yuzu",
+            "Kabeljauw (skrei) Tandoori - hangop yoghurt - komkommer - mint - rettich",
+            "Ravioli van kreeft - beurre blanc - tomaat - venkel - dragon",
+            "Coquille - brandade - aardpeer - truffel",
+            "Vis van de markt - rode kool - hete bliksem - octopus - rode wijn jus",
+            "Tartelette van citroen",
+            "Pecannoten taartje",
+            "Zoetigheid voor bij de koffie"
          ],
          context: 'U kunt het CULI-VIS-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van Visaandeschelde. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price: '€ 79,50 p.p. (excl. BTW)'
+         price:'€ 69,50 p.p. \n\n (Prijs is excl. uren van de Chef en/of gastvrouw)'
        },
        menu2: {
           name: "menu",
@@ -85,19 +85,19 @@ export default {
          fontFamily: 'Futura PT',
          listStyle: "'-  '",
          items: [
-           'Brood en kruidenmayonaise',
-           'Terrine de campagne - kweepeer - mierikswortel',
-           'Tarte tatin - appel - eendenlever - vijgen - walnoot',
-           'Beef Tataki - ponzu -  knoflook - bosui - rode peper',
-           'Rouleaux van maiskip - paksoi - bundelzwam - champignon - Tom Kha Kai',
-           'Cannelloni - sukade - spinazie è la crème - gruyère',
-           'Bavette - mousseline - bospeen - marloeskes - truffel-jus',
-           'Chocolade - passievrucht',
-           'Ananas - karamel',
-           'Zoetigheid voor bij de koffie'
+            "Brood en kruidenmayonaise",
+            "Beef Tataki - ponzu -  knoflook - bosui - rode peper",
+            "Tarte tatin - appel - eendenlever - vijgen - walnoot",
+            "Schorseneer 'a la Flamande' - ei - peterselie - chorizo",
+            "Kalfswang - knolselderij - truffel",
+            "Eend - rode biet - blauwe bes - Chioggia biet",
+            "Bavette - spruitjes - rode kool - aardappel mousseline",
+            "Bramen taartje  - yoghurt", 
+            "Ananas - witte chocolade",
+            "Zoetigheid voor bij de koffie"
          ],
          context: ' U kunt het CULI-ROAST-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van The Roast Room. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price:'€ 79,50 p.p. (excl. BTW)'
+         price:'€ 69,50 p.p. \n\n (Prijs is excl. uren van de Chef en/of gastvrouw)'
        },
        menu2: {
           name: "menu",
@@ -114,19 +114,18 @@ export default {
          fontFamily: 'Future PT',
          listStyle: "'-  '",
          items: [
-           'Flatbread - hummus',
-           'Coquille - zwarte bonen - prei - gember',
-           'Burrata - tomaat - spinazie - basilicum',
-           'Sashimi - zalm - tonijn - wakame - gember - wasabi',
-           'Peking duck - bao - komkommer - hoisin',
-           'Bavette - zoete aardappel - asperge - chimichurri',
-           'Chicken teriyaki - kip - noodles - boksoi - teriyaki',
-           'Witte chocolade - ananas - kokos',
-           'Lemon pie - citrus - meringue',
-           'Friandise'
+          "Flatbread & Tzatziki",
+          "Zalm & Tonijn Sashimi",
+          "Burrata - tomaat - basilicum",
+          "Chicken Tacos - tomaat - avocado - rode ui - chipotle",
+          "Beef Tataki - ponzu - rode peper - knoflook",
+          "Bavette - zwarte bonen - gember - bosui - rode peper - pinda",
+          "Shrimp Pad Thai - garnalen - noodles - ei - cashew",
+          "Gezouten Karamel & Passievrucht",
+          "Witte Chocolade & Ananas"
          ],
          context: 'U kunt het TRAVELLER-CULI-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van The Traveller. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price: '€ 79,50 p.p. (excl. BTW)'
+         price:'€ 69,50 p.p. \n\n (Prijs is excl. uren van de Chef en/of gastvrouw)'
        },
        menu2: {
           name: "menu",
