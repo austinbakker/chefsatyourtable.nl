@@ -42,7 +42,7 @@ export default defineComponent({
     onMounted(() => {
         setInterval(() => {
             selected.value++;
-            if(selected.value>3){
+            if(selected.value>2){
                 selected.value=0;
             }
         },4500)

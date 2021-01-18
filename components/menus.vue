@@ -15,7 +15,17 @@
         <div class="text-center font-bold" >
             <div class="font-bold text-lg" >{{resturant.menu.price}}</div>
             <br>
-            <div class="font-normal" >{{resturant.menu.extra}} </div>
+            <div class="font-normal" >
+                <div class="max-w-lg mx-auto mb-4" >{{resturant.menu.extra}}</div>
+                
+                <br>
+                <div class="text-left max-w-xs mx-auto" >
+                    <div class="font-bold" >Voor onze dienstverlening rekenen we per uur:</div>
+                    <div> - € 39,50 (incl. BTW) per Chef</div>
+                    <div>- € 29,50 (incl. BTW) per gastvrouw/heer</div>
+                    <div>Bedankt</div>
+                </div>
+            </div>
         </div>
         <p class="text-center" :style="{color: resturant.menu.color}" >{{`${resturant.menu.context}` || ''}}</p>
 
@@ -79,8 +89,8 @@ export default {
             "Pecannoten taartje",
          ],
          context: 'U kunt het CULI-VIS-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van Visaandeschelde. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price:'€ 79,50 (incl. BTW)',
-         extra:'* Bij de prijs inbegrepen: huur van serviesgoed, bestek en linnen. De menu prijs zal volledig worden overgedragen aan het restaurant. Voor onze dienstverlening rekenen we per uur: € 39,50 (incl. BTW) per Chef € 29,50 (incl. BTW) per Gastvrouw/Heer'
+         price:'€ 79,50 (incl. BTW) p.p.',
+         extra:'* Bij de prijs inbegrepen: huur van serviesgoed, bestek en linnen. De menu prijs zal volledig worden overgedragen aan het restaurant.'
        },
        menu2: {
           name: "menu",
@@ -108,7 +118,7 @@ export default {
           "Witte Chocolade & Ananas"
          ],
          context: 'U kunt het TRAVELLER-CULI-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van The Traveller. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price:'€ 79,50 (incl. BTW)',
+         price:'€ 79,50 (incl. BTW) p.p.',
          extra: '* Bij de prijs inbegrepen: huur van serviesgoed, bestek en linnen.'
        },
        menu2: {
