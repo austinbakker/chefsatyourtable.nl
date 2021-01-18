@@ -12,8 +12,20 @@
       <ul class="grid grid-cols-1 gap-2"  >
         <li  style="list-style-position: inside;" :style="{color: resturant.menu.color, 'font-family': resturant.menu.fontFamily, 'list-style-type': resturant.menu.listStyle}" v-for="(item, indexItem) in resturant.menu.items" :key="indexItem" >{{item}}</li>
       </ul>
-        <p class="text-center font-bold" >{{resturant.menu.price}}</p>
-        <p :style="{color: resturant.menu.color}" >{{`${resturant.menu.context}` || ''}}</p>
+        <div class="text-center font-bold" >
+            <div class="font-bold text-lg" >{{resturant.menu.price}}</div>
+            <br>
+            <div class="font-normal" >{{resturant.menu.extra}} </div>
+        </div>
+        <p class="text-center" :style="{color: resturant.menu.color}" >{{`${resturant.menu.context}` || ''}}</p>
+
+        <div class="text-center" >
+            <h5 class="my-4" >Wijnarrangement voor 2 a 3 pers. </h5>
+            <div>1 fles bubbels</div>
+            <div>1 fles witte wijn</div>
+            <div>1 fles rode wijn</div>
+            <div class="font-bold my-4" >€ 69,50 (incl. BTW) </div>
+        </div>
 
         <a :href="`/${resturant.pdf}`" target="_blank" class="text-center" >
           <button class="mx-auto shadow-md rounded-md py-2 px-4 md:px-12  md:w-64 md:py-3 font-bold transform hover:scale-110 transition-all hover:bg-green hover:text-white" >Wijnkaart</button>
@@ -65,43 +77,14 @@ export default {
             "Vis van de markt - rode kool - hete bliksem - octopus - rode wijn jus",
             "Tartelette van citroen",
             "Pecannoten taartje",
-            "Zoetigheid voor bij de koffie"
          ],
          context: 'U kunt het CULI-VIS-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van Visaandeschelde. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price:'€ 69,50 p.p. \n\n (Prijs is excl. uren van de Chef en/of gastvrouw)'
+         price:'€ 79,50 (incl. BTW)',
+         extra:'* Bij de prijs inbegrepen: huur van serviesgoed, bestek en linnen. De menu prijs zal volledig worden overgedragen aan het restaurant. Voor onze dienstverlening rekenen we per uur: € 39,50 (incl. BTW) per Chef € 29,50 (incl. BTW) per Gastvrouw/Heer'
        },
        menu2: {
           name: "menu",
           image: require('~/assets/images/menu/1.png'),
-      },
-     },
-     {
-       name: 'The Roast Room',
-       image: require('~/assets/images/partners/2.png'),
-       pdf: 'theroastroom.pdf',
-       menu: {
-         name: 'CULI-ROAST-MENU',
-         color: '#000000',
-         fontFamily: 'Futura PT',
-         listStyle: "'-  '",
-         items: [
-            "Brood en kruidenmayonaise",
-            "Beef Tataki - ponzu -  knoflook - bosui - rode peper",
-            "Tarte tatin - appel - eendenlever - vijgen - walnoot",
-            "Schorseneer 'a la Flamande' - ei - peterselie - chorizo",
-            "Kalfswang - knolselderij - truffel",
-            "Eend - rode biet - blauwe bes - Chioggia biet",
-            "Bavette - spruitjes - rode kool - aardappel mousseline",
-            "Bramen taartje  - yoghurt", 
-            "Ananas - witte chocolade",
-            "Zoetigheid voor bij de koffie"
-         ],
-         context: ' U kunt het CULI-ROAST-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van The Roast Room. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price:'€ 69,50 p.p. \n\n (Prijs is excl. uren van de Chef en/of gastvrouw)'
-       },
-       menu2: {
-          name: "menu",
-          image: require('~/assets/images/menu/2.png'),
       },
      },
      {
@@ -125,7 +108,8 @@ export default {
           "Witte Chocolade & Ananas"
          ],
          context: 'U kunt het TRAVELLER-CULI-MENU aanvullen met een bijpassend wijnarrangement of zelf uw eigen wijnen kiezen. Kijk hiervoor op de wijnkaart van The Traveller. Wilt u het menu liever zelf samenstellen, vraag dan naar de mogelijkheden.',
-         price:'€ 69,50 p.p. \n\n (Prijs is excl. uren van de Chef en/of gastvrouw)'
+         price:'€ 79,50 (incl. BTW)',
+         extra: '* Bij de prijs inbegrepen: huur van serviesgoed, bestek en linnen.'
        },
        menu2: {
           name: "menu",

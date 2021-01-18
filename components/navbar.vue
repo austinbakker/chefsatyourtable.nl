@@ -13,12 +13,12 @@
 
     <!-- START - ITEMS  -->
       <div class="text-gold flex  items-center" style="font-family: GlacialIndifferenceBold"  >
-        <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#overons">OVER ONS</a>
-        <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#partner">PARTNERS</a>
-        <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
-        <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#Menus">MENU</a>
-        <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#contact">CONTACT</a>
-        <a class="transition-all transform scale-100 mx-4 hover:scale-125" href="#Impressies">IMPRESSIES</a>
+        <a class="transition-all transform scale-100 mx-10 hover:scale-125" href="#overons">OVER ONS</a>
+        <a class="transition-all transform scale-100 mx-10 hover:scale-125" href="#partner">PARTNERS</a>
+        <a class="transition-all transform scale-100 mx-10 hover:scale-125" href="#hoewerkthet">HOE WERKT HET</a>
+        <a class="transition-all transform scale-100 mx-10 hover:scale-125" href="#Menus">MENU</a>
+        <a class="transition-all transform scale-100 mx-10 hover:scale-125" href="#contact">CONTACT</a>
+        <a class="transition-all transform scale-100 mx-10 hover:scale-125" href="#Impressies">IMPRESSIES</a>
         <a target="_blank" rel="noopener noreferrer" class="mx-4" v-for="(social,index) in socials" :key='index' :href="social.url">
           <img  :src="social.image" :alt="social.name" class="h-4 w-4  transition-all transform scale-100 hover:scale-125">
         </a>

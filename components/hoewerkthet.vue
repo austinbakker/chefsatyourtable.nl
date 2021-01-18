@@ -30,12 +30,12 @@
   </ul> 
 
   <!-- CONTENT -->
-  <div class="h-full flex flex-col items-center justify-around overflow-y-scroll sm:overflow-y-hidden"  >
+  <div class="h-96 my-auto flex flex-col items-center justify-around overflow-y-scroll sm:overflow-y-hidden"  >
   <transition-group name='fade' mode="out-in" >
     <template v-for="(item,index) in items"   >
       <div :key='index' v-if="progress < (index+1)*33 && progress >index*33 || index==0 && progress<3" class="flex flex-col justify-center " >
         <div class="h-12" ></div>
-        <p class="" v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p>
+    <p class="" v-for="(content,indexContent) in item.content" :key="indexContent" >{{content}}<br><br></p>
       </div>
     </template>
   </transition-group>

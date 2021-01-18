@@ -38,8 +38,18 @@ export default defineComponent({
  components: {},
  setup() {
    const selected = ref(0)
+
+    onMounted(() => {
+        setInterval(() => {
+            selected.value++;
+            if(selected.value>3){
+                selected.value=0;
+            }
+        },4500)
+    })
+
     const images = [
-      require('~/assets/images/hero/1.jpg?resize&size=1920'),
+      require('~/assets/images/hero/1_new.jpg?resize&size=1920'),
       require('~/assets/images/hero/2.jpg?resize&size=1920'),
       require('~/assets/images/hero/3.jpg?resize&size=1920'),
     ]

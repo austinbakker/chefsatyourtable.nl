@@ -96,8 +96,8 @@
     </div>
 
     <div class="w-full" >
-      <h5>WOONPLAATS</h5>
-      <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="WOONPLAATS">
+      <h5>POSTCODE + HUIS NR</h5>
+      <input class="bg-gray py-1 px-3 border-2 border-gray hover:border-green outline-none rounded-md w-full" type="text" name="POSTCODE+HUIS NR">
     </div>
     <div class="w-full" >
       <h6 class="font-bold">WENSEN & NOTITIES</h6>
