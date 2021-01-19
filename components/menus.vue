@@ -21,8 +21,8 @@
                 <br>
                 <div class="text-left max-w-xs mx-auto" >
                     <div class="font-bold" >Voor onze dienstverlening rekenen we per uur:</div>
-                    <div> - € 39,50 (incl. BTW) per Chef</div>
-                    <div>- € 29,50 (incl. BTW) per gastvrouw/heer</div>
+                    <div> - € 39,50 (excl. BTW) per Chef</div>
+                    <div>- € 29,50 (excl. BTW) per gastvrouw/heer</div>
                 </div>
             </div>
         </div>

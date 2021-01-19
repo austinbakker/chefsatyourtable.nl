@@ -107,7 +107,7 @@ export default defineComponent({
         },
         // start: "center center",
         // start: 'top top',
-        end: '600px'
+        end: '1600px'
       })
 
       
